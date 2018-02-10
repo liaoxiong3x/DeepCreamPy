@@ -66,7 +66,7 @@ Copyright Disclaimer: Under Section 107 of the Copyright Act 1976, allowance is 
 
 ---
 
-Copyright (c) 2018 tadax
+Copyright (c) 2018 tadax, deeppomf
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
