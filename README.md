@@ -71,9 +71,9 @@ Contributions are welcome!
 
 # License
 
-Model is licensed under CC BY-NC 3.0 License
+Model is licensed under CC BY-NC 3.0 License.
 
-Code is licensed under MIT License and is modified from tadax's project [Globally and Locally Consistent Image Completion with TensorFlow ](https://github.com/tadax/glcic), which is an implementation of the paper [Globally and Locally Consistent Image Completion](http://hi.cs.waseda.ac.jp/%7Eiizuka/projects/completion/data/completion_sig2017.pdf)
+Code is licensed under MIT License and is modified from tadax's project [Globally and Locally Consistent Image Completion with TensorFlow ](https://github.com/tadax/glcic), which is an implementation of the paper [Globally and Locally Consistent Image Completion](http://hi.cs.waseda.ac.jp/%7Eiizuka/projects/completion/data/completion_sig2017.pdf).
 
 Example image is property of [besmiled](https://www.pixiv.net/member.php?id=7902059) and allowed through Fair Use:
 
