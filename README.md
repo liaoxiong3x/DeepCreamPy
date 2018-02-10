@@ -3,7 +3,7 @@ Decensoring Hentai with Deep Neural Networks
 
 This project is a proof of concept that hentai can be decensored with deep learning. 
 
-Please note research is ongoing, and the project works ONLY with color images and 
+Please note research is ongoing, and the project works ONLY with color images and minor bar censorship. Hentai from manga and doujinshi have 
 
 # Dependencies
 
@@ -12,6 +12,7 @@ Please note research is ongoing, and the project works ONLY with color images an
 - PIL
 
 # Model
+Link coming soon
 
 # Usage
 
@@ -21,7 +22,9 @@ Please note research is ongoing, and the project works ONLY with color images an
 
 # License
 
-MIT License
+Model is under CC BY-NC 3.0 License
+
+Code is under MIT License
 
 Copyright (c) 2018 tadax
 
