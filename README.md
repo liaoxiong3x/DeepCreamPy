@@ -3,9 +3,7 @@ Decensoring Hentai with Deep Neural Networks
 
 This project is a proof of concept that hentai can be decensored with deep learning. 
 
-Please note research is ongoing, and the project works ONLY with color images and minor bar censorship.
-
-The neural network does not work well with hentai from manga and doujinshi can't be decensored.
+Please note research is ongoing, and the neural network works ONLY with color images and minor bar censorship.
 
 # Dependencies
 
