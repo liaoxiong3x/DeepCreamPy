@@ -5,7 +5,7 @@ Decensoring Hentai with Deep Neural Networks
 
 # Limitations
 
-This project is a proof of concept of ongoing research; it is EXTREMELY LIMITED in capability.
+This project is EXTREMELY LIMITED in capability. It is a proof of concept of ongoing research.
 
 The decensorship works ONLY with color hentai images that have minor bar censorship of the penis or vagina.
 
@@ -16,6 +16,7 @@ It does NOT work with:
 - Mosaic censorship
 - Censorship of nipples
 - Complete censorship
+- Animated gifs/videos
 
 # Dependencies
 
