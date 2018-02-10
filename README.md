@@ -20,7 +20,9 @@ Link coming soon
 
 The decensorship process is fairly involved. A user interface will eventually be released to streamline the process.
 
-Using image editing software like Photoshop or GIMP, paint the areas you want to decensor the color []. For each censored region, crop 128 x 128 size images containing the censored regions from your images and save them as new ".png" images.
+Download the pretrained model from https://drive.google.com/open?id=1mWHYSj0LDSbJQQxjR4hUMykQkVve2U3Q.
+
+Using image editing software like Photoshop or GIMP, paint the areas you want to decensor the color with RGB values of (0,255,0). For each censored region, crop 128 x 128 size images containing the censored regions from your images and save them as new ".png" images.
 
 Move the cropped images to []. Decensor the images by running
 
