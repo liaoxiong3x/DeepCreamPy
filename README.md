@@ -9,7 +9,7 @@ Please note research is ongoing, and the neural network works ONLY with color im
 
 - Python 2
 - TensorFlow 1.5
-- PIL
+- Pillow
 
 # Model
 Link coming soon
@@ -18,9 +18,19 @@ Link coming soon
 
 ## I. Decensoring hentai
 
-The decensorship process is fairly involved. A UI will eventually be released to streamline the process.
+The decensorship process is fairly involved. A user interface will eventually be released to streamline the process.
 
-Crop 128 x 128 size images containing the censored regions from your images and save them as new images. For each 128 x 128 image, color the 
+Using image editing software like Photoshop or GIMP, crop 128 x 128 size images containing the censored regions from your images and save them as new ".png" images. For each 128 x 128 cropped image, color the censored regions [tbd].
+
+Move the cropped images to []. Run the command 
+
+```
+$ python decensor.py
+```
+
+Decensored images will be saved to the "output" directory.
+
+Paste the decensored images back into the original image.
 
 ## II. Prepare the training data
 
