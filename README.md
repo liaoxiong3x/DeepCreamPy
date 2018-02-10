@@ -1,13 +1,25 @@
 # DeepMindBreak
 Decensoring Hentai with Deep Neural Networks
 
-This project is a proof of concept that hentai can be decensored with deep learning. 
 
-Please note research is ongoing, and the neural network works ONLY with color images and minor bar censorship.
+
+# Limitations
+
+This project is a proof of concept of ongoing research; it is EXTREMELY LIMITED in capability.
+
+The decensorship works ONLY with color hentai images that have minor bar censorship of the penis or vagina.
+
+It does NOT work with:
+- Black and white images
+- Scanned hentai
+- Real life porn
+- Mosaic censorship
+- Censorship of nipples
+- Complete censorship
 
 # Dependencies
 
-- Python 2
+- Python 2/3
 - TensorFlow 1.5
 - Pillow
 
@@ -58,9 +70,9 @@ Contributions are welcome!
 
 Model is licensed under CC BY-NC 3.0 License
 
-Code is licensed under MIT License
+Code is licensed under MIT License and is modified from tadax's project [Globally and Locally Consistent Image Completion with TensorFlow ](https://github.com/tadax/glcic), which is an implementation of the paper [Globally and Locally Consistent Image Completion](http://hi.cs.waseda.ac.jp/%7Eiizuka/projects/completion/data/completion_sig2017.pdf)
 
-Example image is property of besmiled https://www.pixiv.net/member.php?id=7902059 and allowed through Fair Use:
+Example image is property of [besmiled](https://www.pixiv.net/member.php?id=7902059) and allowed through Fair Use:
 
 Copyright Disclaimer: Under Section 107 of the Copyright Act 1976, allowance is made for "fair use" for purposes such as criticism, comment, news reporting, teaching, scholarship and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favor of fair use.
 
