@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow as tf
-import cv2
+from PIL import Image
 import tqdm
 import os
 import matplotlib.pyplot as plt
@@ -30,7 +30,7 @@ def test():
     sess.run(init_op)
 
     saver = tf.train.Saver()
-    saver.restore(sess, '/saved_models/latest')
+    saver.restore(sess, './saved_models/latest')
 
     x_test = np.load(test_npy)
     np.random.shuffle(x_test)

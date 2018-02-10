@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow as tf
-import cv2
+from PIL import Image
 import tqdm
 import os
 import matplotlib.pyplot as plt

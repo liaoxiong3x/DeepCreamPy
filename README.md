@@ -24,6 +24,7 @@ In particular, if a vagina or penis is completely censored out, THERE IS NO HOPE
 - Python 2/3
 - TensorFlow 1.5
 - Pillow
+- tqdm
 
 # Model
 The pretrained model can be downloaded from https://drive.google.com/open?id=1mWHYSj0LDSbJQQxjR4hUMykQkVve2U3Q.

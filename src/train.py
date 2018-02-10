@@ -1,6 +1,6 @@
 import numpy as np
 import tensorflow as tf
-import cv2
+from PIL import Image
 import tqdm
 from model import Model
 import load
@@ -65,8 +65,8 @@ def train():
             x_batch = x_test[:BATCH_SIZE]
             completion = sess.run(model.completion, feed_dict={x: x_batch, mask: mask_batch, is_training: False})
             sample = np.array((completion[0] + 1) * 127.5, dtype=np.uint8)
-            cv2.imwrite('./output/{}.jpg'.format("{0:06d}".format(sess.run(epoch))), cv2.cvtColor(sample, cv2.COLOR_RGB2BGR))
-
+            result = Image.fromarray(sample)
+            result.save('./output/{}.jpg'.format("{0:06d}".format(sess.run(epoch))))
 
             saver = tf.train.Saver()
             saver.save(sess, '/saved_model/latest', write_meta_graph=False)
@@ -106,8 +106,9 @@ def train():
             x_batch = x_test[:BATCH_SIZE]
             completion = sess.run(model.completion, feed_dict={x: x_batch, mask: mask_batch, is_training: False})
             sample = np.array((completion[0] + 1) * 127.5, dtype=np.uint8)
-            cv2.imwrite('/output/{}.jpg'.format("{0:06d}".format(sess.run(epoch))), cv2.cvtColor(sample, cv2.COLOR_RGB2BGR))
-
+            result = Image.fromarray(sample)
+            result.save('./output/{}.jpg'.format("{0:06d}".format(sess.run(epoch))))
+            
             saver = tf.train.Saver()
             saver.save(sess, '/saved_model/latest', write_meta_graph=False)
 
