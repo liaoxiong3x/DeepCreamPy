@@ -18,9 +18,11 @@ Link coming soon
 
 ## I. Decensoring hentai
 
+The decensorship process is fairly involved. A UI will eventually be released to streamline the process.
 
+Crop 128 x 128 size images containing the censored regions from your images and save them as new images. For each 128 x 128 image, color the 
 
-## I. Prepare the training data
+## II. Prepare the training data
 
 Put the images for training the "data/images" directory and convert images to npy format.
 
@@ -29,21 +31,13 @@ $ cd data
 $ python to_npy.py
 ```
 
-The dataset will not be released 
-
-## II. Train the GLCIC model
-
-```
-$ cd src
-$ python train.py
-```
-
-You can download the trained model file: [glcic_model.tar.gz](
-https://drive.google.com/open?id=1jvP2czv_gX8Q1l0tUPNWLV8HLacK6n_Q)
+The dataset will not be released. I do not want to risk trouble for distributing copyrighted pornographic material.
 
 # To do
 - Add a user interface
 - Incorporate GAN loss into training
+
+Contributions are welcome!
 
 # License
 
