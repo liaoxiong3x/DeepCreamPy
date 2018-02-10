@@ -30,7 +30,7 @@ def test():
     sess.run(init_op)
 
     saver = tf.train.Saver()
-    saver.restore(sess, '../saved_models/latest')
+    saver.restore(sess, '/saved_models/latest')
 
     x_test = np.load(test_npy)
     np.random.shuffle(x_test)
@@ -50,7 +50,7 @@ def test():
             masked = raw * (1 - mask_batch[i]) + np.ones_like(raw) * mask_batch[i] * 255
             img = completion[i]
             img = np.array((img + 1) * 127.5, dtype=np.uint8)
-            dst = './output/{}.jpg'.format("{0:06d}".format(cnt))
+            dst = '/output/{}.jpg'.format("{0:06d}".format(cnt))
             output_image([['Input', masked], ['Output', img], ['Ground Truth', raw]], dst)
 
 

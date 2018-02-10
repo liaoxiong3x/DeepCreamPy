@@ -30,7 +30,7 @@ def test():
     sess.run(init_op)
 
     saver = tf.train.Saver()
-    saver.restore(sess, '../saved_models/latest')
+    saver.restore(sess, '/saved_models/latest')
 
     x_test = np.load(test_npy)
     np.random.shuffle(x_test)
