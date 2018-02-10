@@ -12,15 +12,13 @@ Please note research is ongoing, and the neural network works ONLY with color im
 - Pillow
 
 # Model
-Link coming soon
+The pretrained model can be downloaded from https://drive.google.com/open?id=1mWHYSj0LDSbJQQxjR4hUMykQkVve2U3Q.
 
 # Usage
 
 ## I. Decensoring hentai
 
 The decensorship process is fairly involved. A user interface will eventually be released to streamline the process.
-
-Download the pretrained model from https://drive.google.com/open?id=1mWHYSj0LDSbJQQxjR4hUMykQkVve2U3Q.
 
 Using image editing software like Photoshop or GIMP, paint the areas you want to decensor the color with RGB values of (0,255,0). For each censored region, crop 128 x 128 size images containing the censored regions from your images and save them as new ".png" images.
 
