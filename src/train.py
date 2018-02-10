@@ -33,9 +33,9 @@ def train():
     init_op = tf.global_variables_initializer()
     sess.run(init_op)
 
-    if tf.train.get_checkpoint_state('./backup'):
+    if tf.train.get_checkpoint_state('./saved_model'):
         saver = tf.train.Saver()
-        saver.restore(sess, './backup/latest')
+        saver.restore(sess, './saved_model/latest')
 
     x_train, x_test = load.load()
     x_train = np.array([a / 127.5 - 1 for a in x_train])
@@ -69,9 +69,9 @@ def train():
 
 
             saver = tf.train.Saver()
-            saver.save(sess, './backup/latest', write_meta_graph=False)
+            saver.save(sess, './saved_model/latest', write_meta_graph=False)
             if sess.run(epoch) == PRETRAIN_EPOCH:
-                saver.save(sess, './backup/pretrained', write_meta_graph=False)
+                saver.save(sess, './saved_model/pretrained', write_meta_graph=False)
 
 
         # Discrimitation
@@ -109,7 +109,7 @@ def train():
             cv2.imwrite('./output/{}.jpg'.format("{0:06d}".format(sess.run(epoch))), cv2.cvtColor(sample, cv2.COLOR_RGB2BGR))
 
             saver = tf.train.Saver()
-            saver.save(sess, './backup/latest', write_meta_graph=False)
+            saver.save(sess, './saved_model/latest', write_meta_graph=False)
 
 
 def get_points():

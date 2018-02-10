@@ -6,14 +6,13 @@ import os
 import matplotlib.pyplot as plt
 import sys
 sys.path.append('..')
-from network import Network
+from model import Model
 
 IMAGE_SIZE = 128
 LOCAL_SIZE = 64
 HOLE_MIN = 24
 HOLE_MAX = 48
 BATCH_SIZE = 16
-PRETRAIN_EPOCH = 100
 
 test_npy = './lfw.npy'
 
@@ -25,13 +24,13 @@ def test():
     local_completion = tf.placeholder(tf.float32, [BATCH_SIZE, LOCAL_SIZE, LOCAL_SIZE, 3])
     is_training = tf.placeholder(tf.bool, [])
 
-    model = Network(x, mask, local_x, global_completion, local_completion, is_training, batch_size=BATCH_SIZE)
+    model = Model(x, mask, local_x, global_completion, local_completion, is_training, batch_size=BATCH_SIZE)
     sess = tf.Session()
     init_op = tf.global_variables_initializer()
     sess.run(init_op)
 
     saver = tf.train.Saver()
-    saver.restore(sess, '../backup/latest')
+    saver.restore(sess, '../saved_models/latest')
 
     x_test = np.load(test_npy)
     np.random.shuffle(x_test)
