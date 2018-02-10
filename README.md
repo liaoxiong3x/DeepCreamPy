@@ -20,7 +20,7 @@ Link coming soon
 
 The decensorship process is fairly involved. A user interface will eventually be released to streamline the process.
 
-Using image editing software like Photoshop or GIMP, crop 128 x 128 size images containing the censored regions from your images and save them as new ".png" images. For each 128 x 128 cropped image, color the censored regions [tbd].
+Using image editing software like Photoshop or GIMP, paint the areas you want to decensor the color []. For each censored region, crop 128 x 128 size images containing the censored regions from your images and save them as new ".png" images.
 
 Move the cropped images to []. Decensor the images by running
 
@@ -56,9 +56,15 @@ Contributions are welcome!
 
 # License
 
-Model is under CC BY-NC 3.0 License
+Model is licensed under CC BY-NC 3.0 License
 
-Code is under MIT License
+Code is licensed under MIT License
+
+Example image is property of besmiled https://www.pixiv.net/member.php?id=7902059 and allowed through Fair Use:
+
+Copyright Disclaimer: Under Section 107 of the Copyright Act 1976, allowance is made for "fair use" for purposes such as criticism, comment, news reporting, teaching, scholarship and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favor of fair use.
+
+---
 
 Copyright (c) 2018 tadax
 
