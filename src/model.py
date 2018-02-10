@@ -1,6 +1,6 @@
 from layer import *
 
-class Network:
+class Model:
     def __init__(self, x, mask, local_x, global_completion, local_completion, is_training, batch_size):
         self.batch_size = batch_size
         self.imitation = self.generator(x * (1 - mask), is_training)
