@@ -22,23 +22,28 @@ The decensorship process is fairly involved. A user interface will eventually be
 
 Using image editing software like Photoshop or GIMP, crop 128 x 128 size images containing the censored regions from your images and save them as new ".png" images. For each 128 x 128 cropped image, color the censored regions [tbd].
 
-Move the cropped images to []. Run the command 
+Move the cropped images to []. Decensor the images by running
 
 ```
 $ python decensor.py
 ```
 
-Decensored images will be saved to the "output" directory.
+Decensored images will be saved to the "output" directory. Paste the decensored images back into the original image.
 
-Paste the decensored images back into the original image.
+## II. Train the pretrained model
 
-## II. Prepare the training data
-
-Put the images for training the "data/images" directory and convert images to npy format.
+Put the your custom dataset for training the "data/images" directory and convert images to npy format.
 
 ```
 $ cd data
 $ python to_npy.py
+```
+
+Train pretrained model on your custom dataset.
+
+```
+$ cd src
+$ python train.py
 ```
 
 The dataset will not be released. I do not want to risk trouble for distributing copyrighted pornographic material.
