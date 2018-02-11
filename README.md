@@ -13,10 +13,12 @@ The decensorship works ONLY with color hentai images that have minor bar censors
 
 It does NOT work with:
 - Black and white images
-- Scanned hentai
+- Monochrome images
+- Hentai containing screentones (e.g. printed hentai)
 - Real life porn
 - Mosaic censorship
 - Censorship of nipples
+- Censorship of anus
 - Animated gifs/videos
 
 In particular, if a vagina or penis is completely censored out, inpainting will be ineffective.
