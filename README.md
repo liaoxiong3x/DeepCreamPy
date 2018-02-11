@@ -34,9 +34,13 @@ In particular, if a vagina or penis is completely censored out, inpainting will 
 # Model
 The pretrained model can be downloaded from https://drive.google.com/open?id=1mWHYSj0LDSbJQQxjR4hUMykQkVve2U3Q.
 
+Unzip the contents into the /models/ folder.
+
 # Usage
 
 ## I. Decensoring hentai
+
+![Guide](/readme_images/guide.png)
 
 The decensorship process is fairly involved. A user interface will eventually be released to streamline the process.
 
@@ -67,6 +71,7 @@ $ python train.py
 
 # To do
 - Add Python 3 compatibility
+- Retrain for arbitrary shape censors
 - Add a user interface
 - Incorporate GAN loss into training
 
