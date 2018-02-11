@@ -74,10 +74,6 @@ Model is licensed under CC BY-NC 3.0 License.
 
 Code is licensed under MIT License and is modified from tadax's project [Globally and Locally Consistent Image Completion with TensorFlow ](https://github.com/tadax/glcic), which is an implementation of the paper [Globally and Locally Consistent Image Completion](http://hi.cs.waseda.ac.jp/%7Eiizuka/projects/completion/data/completion_sig2017.pdf).
 
-Example image is property of [besmiled](https://www.pixiv.net/member.php?id=7902059) and allowed through Fair Use:
-
-Copyright Disclaimer: Under Section 107 of the Copyright Act 1976, allowance is made for "fair use" for purposes such as criticism, comment, news reporting, teaching, scholarship and research. Fair use is a use permitted by copyright statute that might otherwise be infringing. Non-profit, educational or personal use tips the balance in favor of fair use.
-
 ---
 
 Copyright (c) 2018 tadax, deeppomf
