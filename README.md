@@ -72,6 +72,8 @@ Contributions are welcome!
 
 # License
 
+Example image by dannychoo under [CC BY-NC-SA 2.0 License](https://creativecommons.org/licenses/by-nc-sa/2.0/). The example image is modified from the original, which can be found [here](https://www.flickr.com/photos/dannychoo/16081096643/in/photostream/).
+
 Model is licensed under CC BY-NC 3.0 License.
 
 Code is licensed under MIT License and is modified from tadax's project [Globally and Locally Consistent Image Completion with TensorFlow ](https://github.com/tadax/glcic), which is an implementation of the paper [Globally and Locally Consistent Image Completion](http://hi.cs.waseda.ac.jp/%7Eiizuka/projects/completion/data/completion_sig2017.pdf).
