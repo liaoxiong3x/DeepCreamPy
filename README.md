@@ -1,13 +1,11 @@
 # DeepMindBreak
 *Decensoring Hentai with Deep Neural Networks*
 
-# **THIS REPO IS NOT YET IN A USABLE STATE. PLEASE WAIT FOR THIS NOTICE TO BE REMOVED BEFORE DOWNLOADING/FORKING.**
-
-This project applies an implementation of [Globally and Locally Consistent Image Completion](http://hi.cs.waseda.ac.jp/%7Eiizuka/projects/completion/data/completion_sig2017.pdf) to the problem of hentai decensorship. Using a deep fully convolutional neural network, DeepMindBreak can replace censored artwork in hentai with plausible reconstructions. The user needs to only specify the censored regions for the algorithm to run.
+This project applies an implementation of [Globally and Locally Consistent Image Completion](http://hi.cs.waseda.ac.jp/%7Eiizuka/projects/completion/data/completion_sig2017.pdf) to the problem of hentai decensorship. Using a deep fully convolutional neural network, DeepMindBreak can replace censored artwork in hentai with plausible reconstructions. The user needs to only specify the censored regions.
 
 # Limitations
 
-This project is EXTREMELY LIMITED in capability. It is a proof of concept of ongoing research.
+This project is LIMITED in capability. It is a proof of concept of ongoing research.
 
 The decensorship works ONLY with color hentai images that have minor bar censorship of the penis or vagina.
 
@@ -19,14 +17,15 @@ It does NOT work with:
 - Censorship of nipples
 - Animated gifs/videos
 
-In particular, if a vagina or penis is completely censored out, THERE IS NO HOPE OF RECOVERY.
+In particular, if a vagina or penis is completely censored out, inpainting will be ineffective.
 
 # Dependencies
 
-- Python 2/3
+- Python 2
 - TensorFlow 1.5
 - Pillow
 - tqdm
+- matplotlib (only for running test.py)
 
 # Model
 The pretrained model can be downloaded from https://drive.google.com/open?id=1mWHYSj0LDSbJQQxjR4hUMykQkVve2U3Q.
@@ -39,15 +38,15 @@ The decensorship process is fairly involved. A user interface will eventually be
 
 Using image editing software like Photoshop or GIMP, paint the areas you want to decensor the color with RGB values of (0,255,0). For each censored region, crop 128 x 128 size images containing the censored regions from your images and save them as new ".png" images.
 
-Move the cropped images to []. Decensor the images by running
+Move the cropped images to the "decensor_input_images" directory. Decensor the images by running
 
 ```
 $ python decensor.py
 ```
 
-Decensored images will be saved to the "output" directory. Paste the decensored images back into the original image.
+Decensored images will be saved to the "decensor_output_images" directory. Paste the decensored images back into the original image.
 
-## II. Train the pretrained model
+## II. Train the pretrained model on custom dataset
 
 Put the your custom dataset for training the "data/images" directory and convert images to npy format.
 
@@ -66,6 +65,7 @@ $ python train.py
 The dataset will not be released. I do not want to risk trouble for distributing copyrighted pornographic material.
 
 # To do
+- Add Python 3 compatibility
 - Add a user interface
 - Incorporate GAN loss into training
 
