@@ -51,14 +51,13 @@ Decensored images will be saved to the "decensor_output_images" directory. Paste
 Put the your custom dataset for training the "data/images" directory and convert images to npy format.
 
 ```
-$ cd data
+$ cd training_data
 $ python to_npy.py
 ```
 
 Train pretrained model on your custom dataset.
 
 ```
-$ cd src
 $ python train.py
 ```
 
