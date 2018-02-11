@@ -48,7 +48,7 @@ Decensored images will be saved to the "decensor_output_images" directory. Paste
 
 ## II. Train the pretrained model on custom dataset
 
-Put the your custom dataset for training the "data/images" directory and convert images to npy format.
+Put your custom dataset for training in the "data/images" directory and convert images to npy format.
 
 ```
 $ cd training_data
@@ -60,8 +60,6 @@ Train pretrained model on your custom dataset.
 ```
 $ python train.py
 ```
-
-The dataset will not be released. I do not want to risk trouble for distributing copyrighted pornographic material.
 
 # To do
 - Add Python 3 compatibility
