@@ -36,7 +36,7 @@ Embarrassingly, because the neural network was trained to decensor horizontally 
 - matplotlib (only for running test.py)
 
 # Model
-The pretrained model can be downloaded from https://drive.google.com/open?id=1mWHYSj0LDSbJQQxjR4hUMykQkVve2U3Q.
+The pretrained model can be downloaded from **Model temporarily removed.**.
 
 Unzip the contents into the /models/ folder.
 
