@@ -3,6 +3,8 @@
 
 This project applies an implementation of [Globally and Locally Consistent Image Completion](http://hi.cs.waseda.ac.jp/%7Eiizuka/projects/completion/data/completion_sig2017.pdf) to the problem of hentai decensorship. Using a deep fully convolutional neural network, DeepMindBreak can replace censored artwork in hentai with plausible reconstructions. The user needs to only specify the censored regions.
 
+![Censored, decensored][/readme_images/collage.png]
+
 # Limitations
 
 This project is LIMITED in capability. It is a proof of concept of ongoing research.

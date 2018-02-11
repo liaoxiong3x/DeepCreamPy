@@ -7,12 +7,13 @@ import matplotlib.pyplot as plt
 import sys
 sys.path.append('..')
 from model import Model
+from poisson_blend import blend
 
 IMAGE_SIZE = 128
 LOCAL_SIZE = 64
 HOLE_MIN = 24
 HOLE_MAX = 48
-BATCH_SIZE = 3
+BATCH_SIZE = 1
 
 image_folder = 'decensor_input_images/'
 mask_color = [0, 255, 0]
@@ -57,7 +58,10 @@ def decensor():
             cnt += 1
             img = completion[i]
             img = np.array((img + 1) * 127.5, dtype=np.uint8)
-            output = Image.fromarray(img.astype('uint8'), 'RGB')
+            original = x_batch[i]
+            original = np.array((original + 1) * 127.5, dtype=np.uint8)
+            output = blend(original, img, mask_batch[0,:,:,0])
+            output = Image.fromarray(output.astype('uint8'), 'RGB')
             dst = './decensor_output_images/{}.png'.format("{0:06d}".format(cnt))
             output.save(dst)
 
