@@ -34,6 +34,7 @@ Embarrassingly, because the neural network was trained to decensor horizontally 
 - Pillow
 - tqdm
 - scipy
+- pyamg
 - matplotlib (only for running test.py)
 
 Tested on Ubuntu 16.04. Cannot run on Windows since Tensorflow on Windows is for Python 3.
