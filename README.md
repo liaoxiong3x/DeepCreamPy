@@ -37,7 +37,7 @@ Embarrassingly, because the neural network was trained to decensor horizontally 
 - pyamg (only needed if poisson blending is enabled in decensor.py)
 - matplotlib (only for running test.py)
 
-Tested on Ubuntu 16.04 and Windows.
+No GPU required! Tested on Ubuntu 16.04 and Windows.
 
 Poisson blending is disabled by default since it has little effect on output quality.
 
