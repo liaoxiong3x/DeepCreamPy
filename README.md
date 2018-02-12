@@ -29,7 +29,7 @@ Embarrassingly, because the neural network was trained to decensor horizontally 
 
 # Dependencies
 
-- Python 2
+- Python 2/3
 - TensorFlow 1.5
 - Pillow
 - tqdm
@@ -37,9 +37,11 @@ Embarrassingly, because the neural network was trained to decensor horizontally 
 - pyamg (only needed if poisson blending is enabled in decensor.py)
 - matplotlib (only for running test.py)
 
-Tested on Ubuntu 16.04. Cannot run on Windows since Tensorflow on Windows is for Python 3.
+Tested on Ubuntu 16.04 and Windows.
 
-Pillow, tqdm, and matplotlib can all be installed using pip.
+Poisson blending is disabled by default since it has little effect on output quality.
+
+Pillow, tqdm, scipy, pyamg, and matplotlib can all be installed using pip.
 
 # Model
 The pretrained model can be downloaded from https://drive.google.com/open?id=1mWHYSj0LDSbJQQxjR4hUMykQkVve2U3Q.
