@@ -40,13 +40,13 @@ def decensor():
         for file in sorted(files):
             file_path = os.path.join(subdir, file)
             if os.path.isfile(file_path) and os.path.splitext(file_path)[1] == ".png":
-                print file_path
+                print(file_path)
                 image = Image.open(file_path).convert('RGB')
                 image = np.array(image)
                 image = np.array(image / 127.5 - 1)
                 x_decensor.append(image)
     x_decensor = np.array(x_decensor)
-    print x_decensor.shape
+    print(x_decensor.shape)
     step_num = int(len(x_decensor) / BATCH_SIZE)
 
     cnt = 0
@@ -60,8 +60,9 @@ def decensor():
             img = np.array((img + 1) * 127.5, dtype=np.uint8)
             original = x_batch[i]
             original = np.array((original + 1) * 127.5, dtype=np.uint8)
-            output = blend(original, img, mask_batch[0,:,:,0])
-            output = Image.fromarray(output.astype('uint8'), 'RGB')
+            #uncomment to enable poisson_blending, but poisson_blending doesn't seem to help
+            #img = blend(original, img, mask_batch[0,:,:,0])
+            output = Image.fromarray(img.astype('uint8'), 'RGB')
             dst = './decensor_output_images/{}.png'.format("{0:06d}".format(cnt))
             output.save(dst)
 
