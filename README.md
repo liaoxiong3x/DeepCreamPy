@@ -35,6 +35,10 @@ Embarrassingly, because the neural network was trained to decensor horizontally 
 - tqdm
 - matplotlib (only for running test.py)
 
+Tested on Ubuntu 16.04. Cannot currently run on Windows since Tensorflow on Windows is for Python 3.
+
+Pillow, tqdm, and matplotlib can all be installed using pip.
+
 # Model
 The pretrained model can be downloaded from https://drive.google.com/open?id=1mWHYSj0LDSbJQQxjR4hUMykQkVve2U3Q.
 
