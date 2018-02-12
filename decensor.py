@@ -15,8 +15,10 @@ HOLE_MIN = 24
 HOLE_MAX = 48
 BATCH_SIZE = 1
 
+
 image_folder = 'decensor_input_images/'
 mask_color = [0, 255, 0]
+poisson_blending_enabled = False
 
 def decensor():
     x = tf.placeholder(tf.float32, [BATCH_SIZE, IMAGE_SIZE, IMAGE_SIZE, 3])
@@ -60,8 +62,8 @@ def decensor():
             img = np.array((img + 1) * 127.5, dtype=np.uint8)
             original = x_batch[i]
             original = np.array((original + 1) * 127.5, dtype=np.uint8)
-            #uncomment to enable poisson_blending, but poisson_blending doesn't seem to help
-            #img = blend(original, img, mask_batch[0,:,:,0])
+            if (poisson_blending_enabled):
+                img = blend(original, img, mask_batch[0,:,:,0])
             output = Image.fromarray(img.astype('uint8'), 'RGB')
             dst = './decensor_output_images/{}.png'.format("{0:06d}".format(cnt))
             output.save(dst)
