@@ -82,7 +82,7 @@ $ python train.py
 ```
 
 # To do
-- Add Python 3 compatibility
+- ~~Add Python 3 compatibility~~
 - Retrain for arbitrary shape censors
 - Add a user interface
 - Incorporate GAN loss into training
