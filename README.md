@@ -83,9 +83,11 @@ $ python train.py
 
 # To do
 - ~~Add Python 3 compatibility~~
+- Add random rotations in cropping rectangles
 - Retrain for arbitrary shape censors
 - Add a user interface
 - Incorporate GAN loss into training
+- Update the model to the new version
 
 Contributions are welcome!
 
