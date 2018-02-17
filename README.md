@@ -33,7 +33,7 @@ Embarrassingly, because the neural network was trained to decensor horizontally 
 - TensorFlow 1.5
 - Pillow
 - tqdm
-- scipy (only needed if poisson blending is enabled in decensor.py)
+- scipy
 - pyamg (only needed if poisson blending is enabled in decensor.py)
 - matplotlib (only for running test.py)
 
