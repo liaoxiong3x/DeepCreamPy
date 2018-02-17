@@ -11,7 +11,7 @@ This project applies an implementation of [Globally and Locally Consistent Image
 
 This project is LIMITED in capability. It is a proof of concept of ongoing research.
 
-The decensorship works ONLY with color hentai images that have minor bar censorship of the penis or vagina.
+The decensorship is intended to ONLY work on color hentai images that have minor bar censorship of the penis or vagina.
 
 It does NOT work with:
 - Black and white images
