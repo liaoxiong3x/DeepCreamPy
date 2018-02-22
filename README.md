@@ -5,6 +5,8 @@ This project applies an implementation of [Globally and Locally Consistent Image
 
 # **THIS PROJECT IS STILL IN DEVELOPMENT. DO NOT BE DISAPPOINTED IF THE RESULTS AREN'T AS GOOD AS YOU EXPECT.**
 
+Next planned update on March 1: Incorporate GAN loss in training. Improve CLI.
+
 ![Censored, decensored](/readme_images/collage.png)
 
 # Limitations
@@ -81,9 +83,11 @@ Train pretrained model on your custom dataset.
 $ python train.py
 ```
 
+Training can be done separately for mosaics with train_mosaic.py, but decensor.py is not yet compatible with mosaic decensorship models.
+
 # To do
 - ~~Add Python 3 compatibility~~
-- Add random rotations in cropping rectangles
+- ~~Add random rotations in cropping rectangles~~
 - Retrain for arbitrary shape censors
 - Add a user interface
 - Incorporate GAN loss into training
