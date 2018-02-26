@@ -6,7 +6,6 @@ import scipy.ndimage
 
 from model import Model
 import load
-
 from config import *
 
 PRETRAIN_EPOCH = 100
