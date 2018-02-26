@@ -107,11 +107,11 @@ Example image by dannychoo under [CC BY-NC-SA 2.0 License](https://creativecommo
 
 Model is licensed under CC BY-NC 3.0 License.
 
-Code is licensed under MIT License and is modified from tadax's project [Globally and Locally Consistent Image Completion with TensorFlow ](https://github.com/tadax/glcic), which is an implementation of the paper [Globally and Locally Consistent Image Completion](http://hi.cs.waseda.ac.jp/%7Eiizuka/projects/completion/data/completion_sig2017.pdf). It also has a modified version of parosky's project [poissonblending](https://github.com/parosky/poissonblending).
+Code is licensed under MIT License and is modified from tadax's project [Globally and Locally Consistent Image Completion with TensorFlow ](https://github.com/tadax/glcic) and shinseung428's project [https://github.com/shinseung428/GlobalLocalImageCompletion_TF], which are implementations of the paper [Globally and Locally Consistent Image Completion](http://hi.cs.waseda.ac.jp/%7Eiizuka/projects/completion/data/completion_sig2017.pdf). It also has a modified version of parosky's project [poissonblending](https://github.com/parosky/poissonblending).
 
 ---
 
-Copyright (c) 2018 tadax, parosky, deeppomf
+Copyright (c) 2018 tadax, Seung Shin, parosky, deeppomf
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
