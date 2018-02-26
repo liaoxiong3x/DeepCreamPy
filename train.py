@@ -2,34 +2,30 @@ import numpy as np
 import tensorflow as tf
 from PIL import Image
 import tqdm
-from model import Model
-import load
 import scipy.ndimage
 
-IMAGE_SIZE = 128
-LOCAL_SIZE = 64
-HOLE_MIN = 24
-HOLE_MAX = 48
-LEARNING_RATE = 1e-3
-BATCH_SIZE = 16
+from model import Model
+import load
+
+from config import *
+
 PRETRAIN_EPOCH = 100
 #the chance the rectangle crop will be rotated
-ROTATE_CHANCE = 0.5
 
-def train():
-    x = tf.placeholder(tf.float32, [BATCH_SIZE, IMAGE_SIZE, IMAGE_SIZE, 3])
-    mask = tf.placeholder(tf.float32, [BATCH_SIZE, IMAGE_SIZE, IMAGE_SIZE, 1])
-    local_x = tf.placeholder(tf.float32, [BATCH_SIZE, LOCAL_SIZE, LOCAL_SIZE, 3])
-    global_completion = tf.placeholder(tf.float32, [BATCH_SIZE, IMAGE_SIZE, IMAGE_SIZE, 3])
-    local_completion = tf.placeholder(tf.float32, [BATCH_SIZE, LOCAL_SIZE, LOCAL_SIZE, 3])
+def train(args):
+    x = tf.placeholder(tf.float32, [args.batch_size, args.image_size, args.image_size, args.input_channel_size])
+    mask = tf.placeholder(tf.float32, [args.batch_size, args.image_size, args.image_size, 1])
+    local_x = tf.placeholder(tf.float32, [args.batch_size, args.local_image_size, args.local_image_size, args.input_channel_size])
+    global_completion = tf.placeholder(tf.float32, [args.batch_size, args.image_size, args.image_size, args.input_channel_size])
+    local_completion = tf.placeholder(tf.float32, [args.batch_size, args.local_image_size, args.local_image_size, args.input_channel_size])
     is_training = tf.placeholder(tf.bool, [])
 
-    model = Model(x, mask, local_x, global_completion, local_completion, is_training, batch_size=BATCH_SIZE)
+    model = Model(x, mask, local_x, global_completion, local_completion, is_training, batch_size=args.batch_size)
     sess = tf.Session()
     global_step = tf.Variable(0, name='global_step', trainable=False)
     epoch = tf.Variable(0, name='epoch', trainable=False)
 
-    opt = tf.train.AdamOptimizer(learning_rate=LEARNING_RATE)
+    opt = tf.train.AdamOptimizer(learning_rate=args.learning_rate)
     g_train_op = opt.minimize(model.g_loss, global_step=global_step, var_list=model.g_variables)
     d_train_op = opt.minimize(model.d_loss, global_step=global_step, var_list=model.d_variables)
 
@@ -44,7 +40,7 @@ def train():
     x_train = np.array([a / 127.5 - 1 for a in x_train])
     x_test = np.array([a / 127.5 - 1 for a in x_test])
 
-    step_num = int(len(x_train) / BATCH_SIZE)
+    step_num = int(len(x_train) / args.batch_size)
 
     while True:
         sess.run(tf.assign(epoch, tf.add(epoch, 1)))
@@ -56,7 +52,7 @@ def train():
         if sess.run(epoch) <= PRETRAIN_EPOCH:
             g_loss_value = 0
             for i in tqdm.tqdm(range(step_num)):
-                x_batch = x_train[i * BATCH_SIZE:(i + 1) * BATCH_SIZE]
+                x_batch = x_train[i * args.batch_size:(i + 1) * args.batch_size]
                 points_batch, mask_batch = get_points()
 
                 _, g_loss = sess.run([g_train_op, model.g_loss], feed_dict={x: x_batch, mask: mask_batch, is_training: True})
@@ -65,7 +61,7 @@ def train():
             print('Completion loss: {}'.format(g_loss_value))
 
             np.random.shuffle(x_test) 
-            x_batch = x_test[:BATCH_SIZE]
+            x_batch = x_test[:args.batch_size]
             completion = sess.run(model.completion, feed_dict={x: x_batch, mask: mask_batch, is_training: False})
             sample = np.array((completion[0] + 1) * 127.5, dtype=np.uint8)
             result = Image.fromarray(sample)
@@ -82,7 +78,7 @@ def train():
             g_loss_value = 0
             d_loss_value = 0
             for i in tqdm.tqdm(range(step_num)):
-                x_batch = x_train[i * BATCH_SIZE:(i + 1) * BATCH_SIZE]
+                x_batch = x_train[i * args.batch_size:(i + 1) * args.batch_size]
                 points_batch, mask_batch = get_points()
 
                 _, g_loss, completion = sess.run([g_train_op, model.g_loss, model.completion], feed_dict={x: x_batch, mask: mask_batch, is_training: True})
@@ -90,7 +86,7 @@ def train():
 
                 local_x_batch = []
                 local_completion_batch = []
-                for i in range(BATCH_SIZE):
+                for i in range(args.batch_size):
                     x1, y1, x2, y2 = points_batch[i]
                     local_x_batch.append(x_batch[i][y1:y2, x1:x2, :])
                     local_completion_batch.append(completion[i][y1:y2, x1:x2, :])
@@ -106,7 +102,7 @@ def train():
             print('Discriminator loss: {}'.format(d_loss_value))
 
             np.random.shuffle(x_test) 
-            x_batch = x_test[:BATCH_SIZE]
+            x_batch = x_test[:args.batch_size]
             completion = sess.run(model.completion, feed_dict={x: x_batch, mask: mask_batch, is_training: False})
             sample = np.array((completion[0] + 1) * 127.5, dtype=np.uint8)
             result = Image.fromarray(sample)
@@ -119,21 +115,21 @@ def train():
 def get_points():
     points = []
     mask = []
-    for i in range(BATCH_SIZE):
-        x1, y1 = np.random.randint(0, IMAGE_SIZE - LOCAL_SIZE + 1, 2)
-        x2, y2 = np.array([x1, y1]) + LOCAL_SIZE
+    for i in range(args.batch_size):
+        x1, y1 = np.random.randint(0, args.image_size - args.local_image_size + 1, 2)
+        x2, y2 = np.array([x1, y1]) + args.local_image_size
         points.append([x1, y1, x2, y2])
 
-        w, h = np.random.randint(HOLE_MIN, HOLE_MAX + 1, 2)
-        p1 = x1 + np.random.randint(0, LOCAL_SIZE - w)
-        q1 = y1 + np.random.randint(0, LOCAL_SIZE - h)
+        w, h = np.random.randint(args.min_mask_size, args.max_mask_size + 1, 2)
+        p1 = x1 + np.random.randint(0, args.local_image_size - w)
+        q1 = y1 + np.random.randint(0, args.local_image_size - h)
         p2 = p1 + w
         q2 = q1 + h
         
-        m = np.zeros((IMAGE_SIZE, IMAGE_SIZE, 1), dtype=np.uint8)
+        m = np.zeros((args.image_size, args.image_size, 1), dtype=np.uint8)
         m[q1:q2 + 1, p1:p2 + 1] = 1
 
-        if (np.random.random() < ROTATE_CHANCE):
+        if (np.random.random() < args.rotate_chance):
         	#rotate random amount between 0 and 90 degrees
         	m = scipy.ndimage.rotate(m, np.random.random()*90, reshape = False)
         	#set all elements greater than 0 to 1
@@ -145,4 +141,4 @@ def get_points():
 
 
 if __name__ == '__main__':
-    train()
+    train(args)
