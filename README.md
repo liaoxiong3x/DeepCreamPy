@@ -74,7 +74,7 @@ You must have a GPU for training since training on a CPU will take weeks.
 
 Your custom dataset should be 128 x 128 images of uncensored vaginas and penises cropped from hentai. The more images, the better: I used 70,000 images for training. Censoring these images yourself is unnecessary.
 
-Put your custom dataset for training in the "data/images" directory and convert images to npy format.
+Put your custom dataset for training in the "training_data/images" directory and convert images to npy format.
 
 ```
 $ cd training_data
@@ -99,7 +99,7 @@ Training can be done separately for mosaics with train_mosaic.py, but decensor.p
 - Incorporate GAN loss into training
 - Update the model to the new version
 
-Contributions are welcome! Special thanks to StartleStars for contributing code for mosaic decensorship.
+Contributions are welcome! Special thanks to @StartleStars for contributing code for mosaic decensorship.
 
 # License
 
