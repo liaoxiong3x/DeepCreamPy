@@ -19,11 +19,12 @@ parser.add_argument('--input_channel_size', dest='input_channel_size', default=3
 parser.add_argument('--min_mask_size', dest='min_mask_size', default=24, help='minimum mask size')
 parser.add_argument('--max_mask_size', dest='max_mask_size', default=48, help='maximum mask size')
 parser.add_argument('--rotate_chance', dest='rotate_chance', default=0.5, help='chance the mask will be randomly rotated')
+parser.add_argument('--train_mosaic', dest ='train_mosaic', default=False, help='train neural network to decensor mosaics')
 
 # parser.add_argument('--input_dim', dest='input_dim', default=100, help='input z size')
 
 # #Training Settings
-# parser.add_argument('--continue_training', dest='continue_training', default=False, type=str2bool, help='flag to continue training')
+parser.add_argument('--continue_training', dest='continue_training', default=False, type=str2bool, help='flag to continue training')
 
 # parser.add_argument('--data', dest='data', default='../ambientGAN_TF/data', help='cats image train path')
 

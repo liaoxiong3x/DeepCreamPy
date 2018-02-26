@@ -10,7 +10,6 @@ import load
 from config import *
 
 PRETRAIN_EPOCH = 100
-#the chance the rectangle crop will be rotated
 
 def train(args):
     x = tf.placeholder(tf.float32, [args.batch_size, args.image_size, args.image_size, args.input_channel_size])
@@ -32,9 +31,13 @@ def train(args):
     init_op = tf.global_variables_initializer()
     sess.run(init_op)
 
-    if tf.train.get_checkpoint_state('./models'):
-        saver = tf.train.Saver()
-        saver.restore(sess, './models/latest')
+    if args.continue_training:
+        if tf.train.get_checkpoint_state('./models'):
+            print("Continuing training from checkpoint.")
+            saver = tf.train.Saver()
+            saver.restore(sess, './models/latest')
+        else:
+            print("Checkpoint not found! Training new model from scratch.")
 
     x_train, x_test = load.load()
     x_train = np.array([a / 127.5 - 1 for a in x_train])
