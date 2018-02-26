@@ -99,7 +99,7 @@ Training can be done separately for mosaics with train_mosaic.py, but decensor.p
 - Incorporate GAN loss into training
 - Update the model to the new version
 
-Contributions are welcome! Special thanks to @StartleStars for contributing code for mosaic decensorship.
+Contributions are welcome! Special thanks to StartleStars for contributing code for mosaic decensorship.
 
 # License
 
