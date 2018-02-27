@@ -16,6 +16,9 @@ for path in paths:
     #img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
     #x.append(img)
     temp = Image.open(path)
+    #remove alpha channel
+    if temp.mode=='RGBA':
+        temp = im.convert('RGB')
     keep = temp.copy()
     keep = np.array(keep)
     x.append(keep)
