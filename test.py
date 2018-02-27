@@ -6,7 +6,9 @@ import os
 import matplotlib.pyplot as plt
 import sys
 sys.path.append('..')
+
 from model import Model
+from config import *
 
 IMAGE_SIZE = 128
 LOCAL_SIZE = 64
@@ -16,7 +18,7 @@ BATCH_SIZE = 16
 
 test_npy = './lfw.npy'
 
-def test():
+def test(args):
     x = tf.placeholder(tf.float32, [BATCH_SIZE, IMAGE_SIZE, IMAGE_SIZE, 3])
     mask = tf.placeholder(tf.float32, [BATCH_SIZE, IMAGE_SIZE, IMAGE_SIZE, 1])
     local_x = tf.placeholder(tf.float32, [BATCH_SIZE, LOCAL_SIZE, LOCAL_SIZE, 3])
@@ -50,7 +52,7 @@ def test():
             masked = raw * (1 - mask_batch[i]) + np.ones_like(raw) * mask_batch[i] * 255
             img = completion[i]
             img = np.array((img + 1) * 127.5, dtype=np.uint8)
-            dst = './testing_output_images/{}.jpg'.format("{0:06d}".format(cnt))
+            dst = args.testing_output_path + '{}.jpg'.format("{0:06d}".format(cnt))
             output_image([['Input', masked], ['Output', img], ['Ground Truth', raw]], dst)
 
 
@@ -91,5 +93,6 @@ def output_image(images, dst):
 
 
 if __name__ == '__main__':
-    test()
-    
+    if not os.path.exists(args.testing_output_path):
+        os.makedirs(args.testing_output_path)
+    test(args)
