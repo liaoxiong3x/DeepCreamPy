@@ -18,7 +18,9 @@ for path in paths:
     temp = Image.open(path)
     #remove alpha channel
     if temp.mode=='RGBA':
-        temp = im.convert('RGB')
+        temp = temp.convert('RGB')
+        print ("no alpha")
+    print temp.mode
     keep = temp.copy()
     keep = np.array(keep)
     x.append(keep)
