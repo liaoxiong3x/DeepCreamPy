@@ -19,8 +19,6 @@ for path in paths:
     #remove alpha channel
     if temp.mode=='RGBA':
         temp = temp.convert('RGB')
-        print ("no alpha")
-    print temp.mode
     keep = temp.copy()
     keep = np.array(keep)
     x.append(keep)
