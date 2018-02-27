@@ -11,15 +11,13 @@ from model import Model
 from poisson_blend import blend
 from config import *
 
-#size of input of local discrimnator. do not change this value.
-LOCAL_SIZE = 64
 BATCH_SIZE = 1
 
 image_folder = 'decensor_input_images/'
 mask_color = [0, 255, 0]
 poisson_blending_enabled = False
 
-def decensor():
+def decensor(args):
     x = tf.placeholder(tf.float32, [args.batch_size, args.image_size, args.image_size, args.input_channel_size])
     mask = tf.placeholder(tf.float32, [args.batch_size, args.image_size, args.image_size, 1])
     local_x = tf.placeholder(tf.float32, [args.batch_size, args.local_image_size, args.local_image_size, args.input_channel_size])
@@ -82,5 +80,5 @@ def get_mask(x_batch):
     return np.array(mask)
 
 if __name__ == '__main__':
-    decensor()
+    decensor(args)
     
