@@ -87,7 +87,10 @@ To train, run
 $ python train.py
 ```
 
-If desired, you can train the pretrained model on your custom dataset.
+If desired, you can train the pretrained model on your custom dataset by running
+```
+$ python train.py --continue_training=True
+```
 
 Training can be done separately for mosaics with train_mosaic.py, but decensor.py is not yet compatible with mosaic decensorship models.
 
