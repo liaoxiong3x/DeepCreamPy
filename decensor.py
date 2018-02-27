@@ -74,7 +74,7 @@ def get_mask(x_batch):
         m = np.zeros((args.image_size, args.image_size, 1), dtype=np.uint8)
         for x in range(args.image_size):
             for y in range(args.image_size):
-                if np.array_equal(raw[x][y], [0, 255, 0]):
+                if np.array_equal(raw[x][y], mask_color):
                     m[x, y] = 1
         mask.append(m)
     return np.array(mask)
