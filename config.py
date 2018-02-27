@@ -49,7 +49,7 @@ parser.add_argument('--learning_rate', dest='learning_rate', default=0.001, help
 # parser.add_argument('--checkpoints_path', dest='checkpoints_path', default='./checkpoints/', help='saved model checkpoint path')
 # parser.add_argument('--graph_path', dest='graph_path', default='./graphs/', help='tensorboard graph')
 # parser.add_argument('--images_path', dest='images_path', default='./images/', help='result images path')
-
+parser.add_argument('--training_samples_path', dest='training_samples_path', default='./training_samples/', help='samples images generated during training path')
 
 
 args = parser.parse_args()

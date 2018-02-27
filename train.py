@@ -108,7 +108,7 @@ def train(args):
             completion = sess.run(model.completion, feed_dict={x: x_batch, mask: mask_batch, is_training: False})
             sample = np.array((completion[0] + 1) * 127.5, dtype=np.uint8)
             result = Image.fromarray(sample)
-            result.save('./training_output_images/{}.jpg'.format("{0:06d}".format(sess.run(epoch))))
+            result.save(args.training_samples_path + '{}.jpg'.format("{0:06d}".format(sess.run(epoch))))
             
             saver = tf.train.Saver()
             saver.save(sess, './models/latest', write_meta_graph=False)
@@ -143,4 +143,6 @@ def get_points():
 
 
 if __name__ == '__main__':
+    if not os.path.exists(args.training_samples_path):
+        os.makedirs(args.training_samples_path)
     train(args)
