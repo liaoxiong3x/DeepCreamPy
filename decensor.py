@@ -11,6 +11,7 @@ from model import Model
 from poisson_blend import blend
 from config import *
 
+#TODO: allow variable batch sizes when decensoring. changing BATCH_SIZE will likely result in crashing
 BATCH_SIZE = 1
 
 mask_color = [0, 255, 0]
@@ -82,4 +83,3 @@ if __name__ == '__main__':
     if not os.path.exists(args.decensor_output_path):
         os.makedirs(args.decensor_output_path)
     decensor(args)
-    
