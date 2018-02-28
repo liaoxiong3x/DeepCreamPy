@@ -3,6 +3,7 @@ import tensorflow as tf
 from PIL import Image
 import tqdm
 import scipy.ndimage
+import os
 
 from model import Model
 import load
