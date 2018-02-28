@@ -18,17 +18,18 @@ parser.add_argument('--local_input_size', dest='local_input_size', default=64, h
 parser.add_argument('--input_channel_size', dest='input_channel_size', default=3, help='input image channel')
 parser.add_argument('--min_mask_size', dest='min_mask_size', default=24, help='minimum mask size')
 parser.add_argument('--max_mask_size', dest='max_mask_size', default=48, help='maximum mask size')
-parser.add_argument('--rotate_chance', dest='rotate_chance', default=0.5, help='chance the mask will be randomly rotated')
+parser.add_argument('--rotate_chance', dest='rotate_chance', default=0.7, help='chance the mask will be randomly rotated')
 parser.add_argument('--train_mosaic', dest ='train_mosaic', default=False, help='train neural network to decensor mosaics')
 
 # parser.add_argument('--input_dim', dest='input_dim', default=100, help='input z size')
 
 # #Training Settings
 parser.add_argument('--continue_training', dest='continue_training', default=False, type=str2bool, help='flag to continue training')
+parser.add_argument('--training_samples_path', dest='training_samples_path', default='./training_samples/', help='samples images generated during training path')
+parser.add_argument('--batch_size', dest='batch_size', default=16, help='batch size')
 
 # parser.add_argument('--data', dest='data', default='../ambientGAN_TF/data', help='cats image train path')
 
-parser.add_argument('--batch_size', dest='batch_size', default=16, help='batch size')
 # parser.add_argument('--train_step', dest='train_step', default=400, help='total number of train_step')
 # parser.add_argument('--Tc', dest='Tc', default=100, help='Tc to train Completion Network')
 # parser.add_argument('--Td', dest='Td', default=1, help='Td to train Discriminator Network')
@@ -49,7 +50,9 @@ parser.add_argument('--learning_rate', dest='learning_rate', default=0.001, help
 # parser.add_argument('--checkpoints_path', dest='checkpoints_path', default='./checkpoints/', help='saved model checkpoint path')
 # parser.add_argument('--graph_path', dest='graph_path', default='./graphs/', help='tensorboard graph')
 # parser.add_argument('--images_path', dest='images_path', default='./images/', help='result images path')
-parser.add_argument('--training_samples_path', dest='training_samples_path', default='./training_samples/', help='samples images generated during training path')
 parser.add_argument('--testing_output_path', dest='testing_output_path', default='./testing_output/', help='output images generated from running test.py path')
+parser.add_argument('--decensor_input_path', dest='decensor_input_path', default='./decensor_input/', help='input images to be decensored by decensor.py path')
+parser.add_argument('--decensor_output_path', dest='decensor_output_path', default='./decensor_output/', help='output images generated from running decensor.py path')
+
 
 args = parser.parse_args()
