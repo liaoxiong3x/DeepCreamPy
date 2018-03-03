@@ -5,8 +5,6 @@ This project applies an implementation of [Globally and Locally Consistent Image
 
 # **THIS PROJECT IS STILL IN DEVELOPMENT. DO NOT BE DISAPPOINTED IF THE RESULTS AREN'T AS GOOD AS YOU EXPECT.**
 
-Next planned update on March 1: Incorporate GAN loss in training. Improve CLI.
-
 ![Censored, decensored](/readme_images/collage.png)
 
 # Limitations
