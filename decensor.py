@@ -14,7 +14,7 @@ from config import *
 #TODO: allow variable batch sizes when decensoring. changing BATCH_SIZE will likely result in crashing
 BATCH_SIZE = 1
 
-mask_color = [0, 255, 0]
+mask_color = [args.mask_color_red, args.mask_color_green, arg.mask_color_blue]
 poisson_blending_enabled = False
 
 def decensor(args):

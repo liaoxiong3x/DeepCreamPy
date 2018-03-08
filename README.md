@@ -56,7 +56,7 @@ Unzip the contents into the /models/ folder.
 
 The decensorship process is fairly involved. A user interface will eventually be released to streamline the process.
 
-Using image editing software like Photoshop or GIMP, paint the areas you want to decensor the color with RGB values of (0,255,0). For each censored region, crop 128 x 128 size images containing the censored regions from your images and save them as new ".png" images.
+Using image editing software like Photoshop or GIMP, paint the areas you want to decensor the color with RGB values of (0,255,0). You can change the mask color in config. For each censored region, crop 128 x 128 size images containing the censored regions from your images and save them as new ".png" images.
 
 Move the cropped images to the "decensor_input_images" directory. Decensor the images by running
 
@@ -112,7 +112,7 @@ Code is licensed under CC BY-NC-SA 4.0 License and is modified from tadax's proj
 
 ---
 
-Copyright (c) 2018 tadax, Seung Shin, parosky, deeppomf
+Copyright (c) 2018 tadax, Seung Shin, parosky
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal

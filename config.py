@@ -12,7 +12,7 @@ def str2bool(v):
 
 parser = argparse.ArgumentParser(description='')
 
-#Image setting
+#Image settings
 parser.add_argument('--input_size', dest='input_size', default=128, help='input image size')
 parser.add_argument('--local_input_size', dest='local_input_size', default=64, help='local input image size')
 parser.add_argument('--input_channel_size', dest='input_channel_size', default=3, help='input image channel')
@@ -23,7 +23,7 @@ parser.add_argument('--train_mosaic', dest ='train_mosaic', default=False, help=
 
 # parser.add_argument('--input_dim', dest='input_dim', default=100, help='input z size')
 
-# #Training Settings
+# #Training settings
 parser.add_argument('--continue_training', dest='continue_training', default=False, type=str2bool, help='flag to continue training')
 parser.add_argument('--training_samples_path', dest='training_samples_path', default='./training_samples/', help='samples images generated during training path')
 parser.add_argument('--batch_size', dest='batch_size', default=16, help='batch size')
@@ -46,7 +46,7 @@ parser.add_argument('--learning_rate', dest='learning_rate', default=0.001, help
 # #Test image
 # parser.add_argument('--img_path', dest='img_path', default='', help='test image path')
 
-# #Extra folders setting
+# #Extra folders settings
 # parser.add_argument('--checkpoints_path', dest='checkpoints_path', default='./checkpoints/', help='saved model checkpoint path')
 # parser.add_argument('--graph_path', dest='graph_path', default='./graphs/', help='tensorboard graph')
 # parser.add_argument('--images_path', dest='images_path', default='./images/', help='result images path')
@@ -54,5 +54,9 @@ parser.add_argument('--testing_output_path', dest='testing_output_path', default
 parser.add_argument('--decensor_input_path', dest='decensor_input_path', default='./decensor_input/', help='input images to be decensored by decensor.py path')
 parser.add_argument('--decensor_output_path', dest='decensor_output_path', default='./decensor_output/', help='output images generated from running decensor.py path')
 
+# Decensor settings
+parser.add_argument('--mask_color_red', dest='mask_color_red', default=0, help='red channel of mask color in decensoring')
+parser.add_argument('--mask_color_green', dest='mask_color_green', default=255, help='green channel of mask color in decensoring')
+parser.add_argument('--mask_color_blue', dest='mask_color_blue', default=0, help='blue channel of mask color in decensoring')
 
 args = parser.parse_args()
