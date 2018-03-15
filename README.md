@@ -3,6 +3,8 @@
 
 This project applies an implementation of [Globally and Locally Consistent Image Completion](http://hi.cs.waseda.ac.jp/%7Eiizuka/projects/completion/data/completion_sig2017.pdf) to the problem of hentai decensorship. Using a deep fully convolutional neural network, DeepMindBreak can replace censored artwork in hentai with plausible reconstructions. The user needs to only specify the censored regions.
 
+March 14th, 2018: Updated pretrained model to handle censor bars in any orientation.
+
 # **THIS PROJECT IS STILL IN DEVELOPMENT. DO NOT BE DISAPPOINTED IF THE RESULTS AREN'T AS GOOD AS YOU EXPECT.**
 
 ![Censored, decensored](/readme_images/collage.png)
@@ -25,8 +27,6 @@ It does NOT work with:
 
 In particular, if a vagina or penis is completely censored out, inpainting will be ineffective.
 
-Embarrassingly, because the neural network was trained to decensor horizontally and vertically oriented rectangles, it has trouble with angled rectangles. This will be fixed soon.
-
 # Dependencies
 
 - Python 2/3
@@ -34,7 +34,7 @@ Embarrassingly, because the neural network was trained to decensor horizontally 
 - Pillow
 - tqdm
 - scipy
-- pyamg (only needed if poisson blending is enabled in decensor.py)
+- pyamg
 - matplotlib (only for running test.py)
 
 No GPU required! Tested on Ubuntu 16.04 and Windows.
@@ -120,23 +120,23 @@ Code is licensed under CC BY-NC-SA 4.0 License and is modified from tadax's proj
 ```
 
 ```
-#Copyright (c) 2018 tadax, Seung Shin, parosky
+# Copyright (c) 2018 tadax, Seung Shin, parosky
 #
-#Permission is hereby granted, free of charge, to any person obtaining a copy
-#of this software and associated documentation files (the "Software"), to deal
-#in the Software without restriction, including without limitation the rights
-#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-#copies of the Software, and to permit persons to whom the Software is
-#furnished to do so, subject to the following conditions:
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
 #
-#The above copyright notice and this permission notice shall be included in all
-#copies or substantial portions of the Software.
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
 #
-#THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-#IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-#FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-#AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-#LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-#OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-#SOFTWARE.
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
 ```
