@@ -44,7 +44,7 @@ Poisson blending is disabled by default since it has little effect on output qua
 Pillow, tqdm, scipy, pyamg, and matplotlib can all be installed using pip.
 
 # Model
-The pretrained model can be downloaded from https://drive.google.com/open?id=1mWHYSj0LDSbJQQxjR4hUMykQkVve2U3Q.
+Pretrained models can be downloaded from https://drive.google.com/open?id=1s-ydz1L4-0AWIm9yk9PlBgZVkKJVdGAO.
 
 Unzip the contents into the /models/ folder.
 
