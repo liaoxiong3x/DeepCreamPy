@@ -37,7 +37,7 @@ In particular, if a vagina or penis is completely censored out, inpainting will 
 - pyamg
 - matplotlib (only for running test.py)
 
-No GPU required! Tested on Ubuntu 16.04 and Windows.
+No GPU required! Tested on Ubuntu 16.04 and Windows. (Tensorflow on Windows is compatible with Python 3 and not Python 2.)
 
 Poisson blending is disabled by default since it has little effect on output quality.
 
@@ -113,7 +113,7 @@ Code is licensed under CC BY-NC-SA 4.0 License and is modified from tadax's proj
 ```
 # Copyright (c) 2018, deeppomf. All rights reserved.
 #
-# This work is licensed under the Creative Commons Attribution-NonCommercial-Sharealike
+# This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike
 # 4.0 International License. To view a copy of this license, visit
 # https://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to
 # Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
