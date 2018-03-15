@@ -112,6 +112,8 @@ Code is licensed under CC BY-NC-SA 4.0 License and is modified from tadax's proj
 
 ---
 
+
+```
 #Copyright (c) 2018 tadax, Seung Shin, parosky
 #
 #Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -131,11 +133,16 @@ Code is licensed under CC BY-NC-SA 4.0 License and is modified from tadax's proj
 #LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #SOFTWARE.
+```
 
 ---
+
+```
 # Copyright (c) 2018, deeppomf. All rights reserved.
 #
-# This work is licensed under the Creative Commons Attribution-NonCommercial
+# This work is licensed under the Creative Commons Attribution-NonCommercial-Sharealike
 # 4.0 International License. To view a copy of this license, visit
-# http://creativecommons.org/licenses/by-nc/4.0/ or send a letter to
+# https://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to
 # Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+```
