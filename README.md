@@ -110,8 +110,15 @@ Model is licensed under CC BY-NC-SA 4.0 License.
 
 Code is licensed under CC BY-NC-SA 4.0 License and is modified from tadax's project [Globally and Locally Consistent Image Completion with TensorFlow ](https://github.com/tadax/glcic) and shinseung428's project [https://github.com/shinseung428/GlobalLocalImageCompletion_TF], which are implementations of the paper [Globally and Locally Consistent Image Completion](http://hi.cs.waseda.ac.jp/%7Eiizuka/projects/completion/data/completion_sig2017.pdf). It also has a modified version of parosky's project [poissonblending](https://github.com/parosky/poissonblending).
 
----
+```
+# Copyright (c) 2018, deeppomf. All rights reserved.
+#
+# This work is licensed under the Creative Commons Attribution-NonCommercial-Sharealike
+# 4.0 International License. To view a copy of this license, visit
+# https://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to
+# Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 
+```
 
 ```
 #Copyright (c) 2018 tadax, Seung Shin, parosky
@@ -133,16 +140,4 @@ Code is licensed under CC BY-NC-SA 4.0 License and is modified from tadax's proj
 #LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 #OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 #SOFTWARE.
-```
-
----
-
-```
-# Copyright (c) 2018, deeppomf. All rights reserved.
-#
-# This work is licensed under the Creative Commons Attribution-NonCommercial-Sharealike
-# 4.0 International License. To view a copy of this license, visit
-# https://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to
-# Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
-
 ```
