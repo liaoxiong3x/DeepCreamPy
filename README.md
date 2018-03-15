@@ -44,7 +44,7 @@ Poisson blending is disabled by default since it has little effect on output qua
 Pillow, tqdm, scipy, pyamg, and matplotlib can all be installed using pip.
 
 # Model
-Pretrained models can be downloaded from https://drive.google.com/open?id=1s-ydz1L4-0AWIm9yk9PlBgZVkKJVdGAO.
+Pretrained models can be downloaded from https://drive.google.com/open?id=1KveQ0aaye3tdlB7JR9bFEqMk1Lqp8GyC.
 
 Unzip the contents into the /models/ folder.
 
@@ -95,7 +95,7 @@ Training can be done separately for mosaics with train_mosaic.py, but decensor.p
 # To do
 - ~~Add Python 3 compatibility~~
 - ~~Add random rotations in cropping rectangles~~
-- Retrain for arbitrary shape censors
+- ~~Retrain for arbitrary shape censors~~
 - Add a user interface
 - Incorporate GAN loss into training
 - Update the model to the new version
