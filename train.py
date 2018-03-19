@@ -87,6 +87,9 @@ def train(args):
             d_loss_value = 0
             for i in tqdm.tqdm(range(step_num)):
                 x_batch = x_train[i * args.batch_size:(i + 1) * args.batch_size]
+                #janky way of doing horizonal flips
+                if (np.random.random() < 0.5):
+                    x_batch = np.fliplr(x_batch)
                 points_batch, mask_batch = get_points()
 
                 _, g_loss, completion = sess.run([g_train_op, model.g_loss, model.completion], feed_dict={x: x_batch, mask: mask_batch, is_training: True})

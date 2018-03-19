@@ -104,6 +104,8 @@ Contributions are welcome! Special thanks to StartleStars for contributing code 
 
 # License
 
+This code is for personal use and research use only.
+
 Example image by dannychoo under [CC BY-NC-SA 2.0 License](https://creativecommons.org/licenses/by-nc-sa/2.0/). The example image is modified from the original, which can be found [here](https://www.flickr.com/photos/dannychoo/16081096643/in/photostream/).
 
 Model is licensed under CC BY-NC-SA 4.0 License.
