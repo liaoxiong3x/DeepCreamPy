@@ -58,13 +58,13 @@ The decensorship process is fairly involved. A user interface will eventually be
 
 Using image editing software like Photoshop or GIMP, paint the areas you want to decensor the color with RGB values of (0,255,0). You can change the mask color in config. For each censored region, crop 128 x 128 size images containing the censored regions from your images and save them as new ".png" images.
 
-Move the cropped images to the "decensor_input_images" directory. Decensor the images by running
+Move the cropped images to the "decensor_input" directory. Decensor the images by running
 
 ```
 $ python decensor.py
 ```
 
-Decensored images will be saved to the "decensor_output_images" directory. Paste the decensored images back into the original image.
+Decensored images will be saved to the "decensor_output" directory. Paste the decensored images back into the original image.
 
 ## II. Train the pretrained model on custom dataset
 
