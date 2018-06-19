@@ -1,0 +1,5 @@
+Pillow
+tqdm
+scipy
+pyamg
+matplotlib
