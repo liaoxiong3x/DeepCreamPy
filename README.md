@@ -46,9 +46,9 @@ Pretrained models can be downloaded from https://drive.google.com/open?id=1KveQ0
 
 Unzip the contents into the /models/ folder.
 
-# Usage
+# Usage (Outdated. Will be rewritten.)
 
-## I. Decensoring hentai [Outdated. Will be rewritten.]
+## I. Decensoring hentai
 
 ![Guide](/readme_images/guide.png)
 
