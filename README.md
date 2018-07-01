@@ -50,9 +50,9 @@ Unzip the contents into the /models/ folder.
 
 ## I. Decensoring hentai
 
-For each image you want to decensor, using image editing software like Photoshop or GIMP to paint the areas you want to decensor the color (0,255,0).
+For each image you want to decensor, using image editing software like Photoshop or GIMP to paint the areas you want to decensor the color (0,255,0), which is a very bright green color.
 
-Save these images to the "decensor_input" directory. Decensor the images by running
+Save these images in the PNG format to the "decensor_input" directory. Decensor the images by running
 
 ```
 $ python decensor.py
