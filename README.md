@@ -46,23 +46,19 @@ Pretrained models can be downloaded from https://drive.google.com/open?id=1KveQ0
 
 Unzip the contents into the /models/ folder.
 
-# Usage (Outdated. Will be rewritten.)
+# Usage
 
 ## I. Decensoring hentai
 
-![Guide](/readme_images/guide.png)
+For each image you want to decensor, using image editing software like Photoshop or GIMP to paint the areas you want to decensor the color (0,255,0).
 
-The decensorship process is fairly involved. A user interface will eventually be released to streamline the process.
-
-Using image editing software like Photoshop or GIMP, paint the areas you want to decensor the color with RGB values of (0,255,0). You can change the mask color in config. For each censored region, crop 128 x 128 size images containing the censored regions from your images and save them as new ".png" images.
-
-Move the cropped images to the "decensor_input" directory. Decensor the images by running
+Save these images to the "decensor_input" directory. Decensor the images by running
 
 ```
 $ python decensor.py
 ```
 
-Decensored images will be saved to the "decensor_output" directory. Paste the decensored images back into the original image.
+Decensored images will be saved to the "decensor_output" directory.
 
 ## II. Train the pretrained model on custom dataset
 
@@ -98,7 +94,7 @@ Training can be done separately for mosaics with train_mosaic.py, but decensor.p
 - Incorporate GAN loss into training
 - Update the model to the new version
 
-Contributions are welcome! Special thanks to StartleStars for contributing code for mosaic decensorship.
+Contributions are welcome! Special thanks to StartleStars for contributing code for mosaic decensorship and SoftArmpit for greatly simplifying decensoring!
 
 # License
 
