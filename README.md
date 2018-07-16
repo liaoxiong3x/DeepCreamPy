@@ -30,6 +30,7 @@ In particular, if a vagina or penis is completely censored out, inpainting will 
 - Python 2/3
 - TensorFlow 1.5
 - Pillow
+- OpenCV
 - tqdm
 - scipy
 - pyamg
