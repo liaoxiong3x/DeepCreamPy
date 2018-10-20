@@ -88,9 +88,9 @@ If your decensor output looks like this:
 
 ![Bad decensor](/readme_images/mermaid_face_censored_bad_decensor.png)
 
-then the colored regions were not colored correctly.
+then the censored regions were not colored correctly.
 
-Make sure you have antialiasing off.
+*Make sure you have antialiasing off.*
 
 Here are some examples of bad and good colorings:
 
