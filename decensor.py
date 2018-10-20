@@ -51,7 +51,7 @@ class Decensor():
             #print(file)
             file_path = os.path.join(subdir, file)
             if os.path.isfile(file_path) and os.path.splitext(file_path)[1] == ".png":
-                print("Decensoring the image {file_path}".format(file_path))
+                print("Decensoring the image {file_path}".format(file_path = file_path))
                 censored_img = Image.open(file_path)
                 self.decensor_image(censored_img, file)
 
