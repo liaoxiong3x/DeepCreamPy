@@ -73,7 +73,7 @@ Decensor the images by running
 $ python decensor.py
 ```
 
-Decensored images will be saved to the "decensor_output" folder.
+Decensored images will be saved to the "decensor_output" folder. Decensoring takes a few minutes per image.
 
 ## II. Decensoring mosaic censors
 
@@ -82,6 +82,21 @@ To be implemented.
 ## II. Decensoring with the user interface
 
 To be implemented.
+
+# Troubleshooting
+If your decensor output looks like this:
+![Bad decensor](/readme_images/mermaid_face_censored_bad_decensor.png)
+then the colored regions were not colored correctly.
+
+Make sure you have antialiasing off.
+
+Here are some examples of bad and good colorings:
+
+|Image|Comment|
+|--- | --- |
+|![Incomplete coloring](/readme_images/mermaid_face_censored_bad_incomplete.png)|Some censored pixels was left uncolored. Expand your selections to fully cover all censored regions.|
+|![Bad edges](/readme_images/mermaid_face_censored_bad_edge.png)|Some pixels around the edges of the green regions are not pure green. This will cause the green to bleed into the decensors. Make sure anti-aliasing is off and to use a pencil tool and not a brush tool if possible.|
+|![Perfect coloring!](/readme_images/mermaid_face_censored_good.png)|Perfect coloring!|
 
 # To do
 - Finish the user interface
