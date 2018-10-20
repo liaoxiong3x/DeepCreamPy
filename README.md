@@ -59,11 +59,11 @@ To expand selections in GIMP, do Select > Grow.
 
 Save these images in the PNG format to the "decensor_input" folder.
 
-### Using the Binary
+### A. Using the Binary
 
-Decensor the images by double-clicking on the decensor file
+Decensor the images by double-clicking on the decensor file.
 
-### Running from scratch
+### B. Running from scratch
 
 Decensor the images by running
 
