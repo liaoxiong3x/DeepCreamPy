@@ -17,6 +17,8 @@ This project applies an implementation of [Image Inpainting for Irregular Holes 
 
 The decensorship is intended to ONLY work on color hentai images that have minor to moderate bar censorship of the penis or vagina.
 
+Mosaic decensor support soon.
+
 It does NOT work with:
 - Black and white images
 - Monochrome images
@@ -37,7 +39,13 @@ In particular, if a vagina or penis is completely censored out, decensoring will
 
 No GPU required! Tested on Ubuntu 16.04 and Windows. (Tensorflow on Windows is compatible with Python 3 and not Python 2.)
 
-Tensorflow, Pillow, and h5py can all be installed with pip.
+Tensorflow, Pillow, and h5py can all be installed by running
+
+```
+$ pip install -r requirements.txt
+```
+
+in the command line.
 
 # Model
 Pretrained models can be downloaded from https://drive.google.com/open?id=1byrmn6wp0r27lSXcT9MC4j-RQ2R04P1Z.
