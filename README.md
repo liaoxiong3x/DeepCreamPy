@@ -81,8 +81,7 @@ Contributions are welcome! Special thanks to StartleStars for contributing code 
 # License
 **I will likely change the license to be more permissive in the future, but I make no guarantees.**
 
-**This work (the code and the model) is under my exclusive copyright. The only right I grant to users is using this work for personal use to decensor hentai. Copying, distribution, and modification is prohibited. Commercial use is prohibited. (Modification of the 6 values of the arguments in config.py is allowed.)
-**
+**This work (the code and the model) is under my exclusive copyright. The only right I grant to users is using this work for personal use to decensor hentai. Copying, distribution, and modification is prohibited. Commercial use is prohibited. (Modification of the 6 values of the arguments in config.py is allowed.)**
 
 Example image by Shurajo & AVALANCHE Game Studio under [CC BY 3.0 License](https://creativecommons.org/licenses/by/3.0/). The example image is modified from the original, which can be found [here](https://opengameart.org/content/mermaid).
 
