@@ -230,9 +230,9 @@ class PConvUnet(object):
 
         # Load weights into model
         #epoch = 50
-        epoch = int(os.path.basename(filepath).split("_")[0])
-        assert epoch > 0, "Could not parse weight file. Should start with 'X_', with X being the epoch"
-        self.current_epoch = epoch
+        # epoch = int(os.path.basename(filepath).split("_")[0])
+        # assert epoch > 0, "Could not parse weight file. Should start with 'X_', with X being the epoch"
+        # self.current_epoch = epoch
         self.model.load_weights(filepath)        
 
     def current_weightfile(self):
