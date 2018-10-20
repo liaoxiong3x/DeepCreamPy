@@ -1,7 +1,8 @@
-# DeepMindBreak
+# DeepCreamPy
 *Decensoring Hentai with Deep Neural Networks*
+*Formerly named DeepMindBreak*
 
-This project applies an implementation of [Image Inpainting for Irregular Holes Using Partial Convolutions](https://arxiv.org/abs/1804.07723) to the problem of hentai decensorship. Using a deep fully convolutional neural network, DeepMindBreak can replace censored artwork in hentai with plausible reconstructions. The user needs to only specify the censored regions.
+This project applies an implementation of [Image Inpainting for Irregular Holes Using Partial Convolutions](https://arxiv.org/abs/1804.07723) to the problem of hentai decensorship. Using a deep fully convolutional neural network, DeepCreamPy can replace censored artwork in hentai with plausible reconstructions. The user needs to only specify the censored regions.
 
 ![Censored, decensored](/readme_images/mermaid_collage.png)
 
