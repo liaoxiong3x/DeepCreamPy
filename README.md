@@ -33,12 +33,11 @@ In particular, if a vagina or penis is completely censored out, decensoring will
 - Python 3
 - TensorFlow 1.10
 - Pillow
-- argparse
 - h5py
 
 No GPU required! Tested on Ubuntu 16.04 and Windows. (Tensorflow on Windows is compatible with Python 3 and not Python 2.)
 
-Tensorflow, Pillow, argparse, and h5py can all be installed with pip.
+Tensorflow, Pillow, and h5py can all be installed with pip.
 
 # Model
 Pretrained models can be downloaded from https://drive.google.com/open?id=1byrmn6wp0r27lSXcT9MC4j-RQ2R04P1Z.
