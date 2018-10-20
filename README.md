@@ -45,6 +45,8 @@ Unzip the file into the /models/ folder.
 
 # Usage
 
+## I. Decensoring bar censors
+
 For each image you want to decensor, using image editing software like Photoshop or GIMP to paint the areas you want to decensor the green color (0,255,0), which is a very bright green color.
 
 *BE SURE TO TURN OFF ANTI-ALIASING on the tool you are using.*
@@ -62,14 +64,23 @@ $ python decensor.py
 
 Decensored images will be saved to the "decensor_output" folder.
 
+## II. Decensoring mosaic censors
+
+To be implemented.
+
+## II. Decensoring with the user interface
+
+To be implemented.
+
 # To do
 - Finish the user interface
 
 Contributions are welcome! Special thanks to StartleStars for contributing code for mosaic decensorship and SoftArmpit for greatly simplifying decensoring!
 
 # License
+**I will likely change the license to be more permissive in the future, but I make no guarantees.**
 **This work (the code and the model) is under my exclusive copyright. The only right I grant to users is using this work for personal use to decensor hentai. Copying, distribution, and modification is prohibited. Commercial use is prohibited. (Modification of the 6 values of the arguments in config.py is allowed.)
-I will likely change the license to be more permissive in the future, but I make no guarantees.**
+**
 
 Example image by Shurajo & AVALANCHE Game Studio under [CC BY 3.0 License](https://creativecommons.org/licenses/by/3.0/). The example image is modified from the original, which can be found [here](https://opengameart.org/content/mermaid).
 
