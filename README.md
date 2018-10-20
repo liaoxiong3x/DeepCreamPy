@@ -61,9 +61,9 @@ Save these images in the PNG format to the "decensor_input" folder.
 
 ### Using the Binary
 
-Double-click on the decensor file
+Decensor the images by double-clicking on the decensor file
 
-### Using with out the binary
+### Running from scratch
 
 Decensor the images by running
 
