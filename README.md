@@ -10,7 +10,7 @@ This project applies an implementation of [Image Inpainting for Irregular Holes 
 # What's New?
 - Decensoring images of ANY size
 - Higher quality decensors
-- Support for mosaic decensors (still a WIP)
+- Support for mosaic decensors (still a WIP and not yet usable)
 - User interface (still a WIP and not very usable)
 
 # Limitations
