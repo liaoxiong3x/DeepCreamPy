@@ -14,7 +14,6 @@ This project applies an implementation of [Image Inpainting for Irregular Holes 
 - User interface (still a WIP and not very usable)
 
 # Limitations
-
 The decensorship is intended to ONLY work on color hentai images that have minor to moderate bar censorship of the penis or vagina.
 
 Mosaic decensor support soon.
@@ -30,8 +29,12 @@ It does NOT work with:
 
 In particular, if a vagina or penis is completely censored out, decensoring will be ineffective.
 
-# Dependencies
+# Releases
+You can download the latest release [here](https://github.com/deeppomf/DeepCreamPy/releases/latest) or find all previous releases [here](https://github.com/deeppomf/DeepCreamPy/releases).
 
+If you want to run the code yourself, you can download the model from https://drive.google.com/open?id=1byrmn6wp0r27lSXcT9MC4j-RQ2R04P1Z. Unzip the file into the /models/ folder.
+
+# Dependencies
 - Python 3
 - TensorFlow 1.10
 - Pillow
@@ -39,23 +42,13 @@ In particular, if a vagina or penis is completely censored out, decensoring will
 
 No GPU required! Tested on Ubuntu 16.04 and Windows. (Tensorflow on Windows is compatible with Python 3 and not Python 2.)
 
-Tensorflow, Pillow, and h5py can all be installed by running
+Tensorflow, Pillow, and h5py can all be installed by running in the command line
 
 ```
 $ pip install -r requirements.txt
 ```
 
-in the command line.
-
-# Model
-Pretrained models can be downloaded from https://drive.google.com/open?id=1byrmn6wp0r27lSXcT9MC4j-RQ2R04P1Z.
-
-The prebuilt binary has the pretrained model already included with it.
-
-Unzip the file into the /models/ folder.
-
 # Usage
-
 ## I. Decensoring bar censors
 
 For each image you want to decensor, using image editing software like Photoshop or GIMP to color the areas you want to decensor the green color (0,255,0), which is a very bright green color.
