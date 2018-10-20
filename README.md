@@ -43,7 +43,7 @@ Tensorflow, Pillow, argparse, and h5py can all be installed with pip.
 # Model
 Pretrained models can be downloaded from https://drive.google.com/open?id=1byrmn6wp0r27lSXcT9MC4j-RQ2R04P1Z.
 
-The prebuilt binary has the pretrained model included with it.
+The prebuilt binary has the pretrained model already included with it.
 
 Unzip the file into the /models/ folder.
 
