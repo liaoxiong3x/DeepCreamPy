@@ -79,7 +79,6 @@ class Decensor():
         width, height = ori.size
         #save the alpha channel if the image has an alpha channel
         has_alpha = False
-        alpha_channel = None
         if (ori.mode == "RGBA"):
             has_alpha = True
             alpha_channel = np.asarray(ori)[:,:,3]
@@ -90,7 +89,6 @@ class Decensor():
         ori_array = np.array(ori_array / 255.0)
         ori_array = np.expand_dims(ori_array, axis = 0)
 
-        mask = None
         if self.is_mosaic:
             #if mosaic decensor, mask is empty
             mask = np.ones(ori_array.shape, np.uint8)
