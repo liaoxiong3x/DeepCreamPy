@@ -12,10 +12,28 @@ This project applies an implementation of [Image Inpainting for Irregular Holes 
 - Support for mosaic decensors
 - User interface (still a WIP and not very usable)
 
-# Releases
-You can download the latest release [here](https://github.com/deeppomf/DeepCreamPy/releases/latest) or find all previous releases [here](https://github.com/deeppomf/DeepCreamPy/releases).
+# Installation
 
-If you want to run the code yourself, you can download the model from https://drive.google.com/open?id=1byrmn6wp0r27lSXcT9MC4j-RQ2R04P1Z. Unzip the file into the /models/ folder.
+## Download Prebuilt Binaries
+You can download the latest release [here](https://github.com/deeppomf/DeepCreamPy/releases/latest) or find all previous releases [here](https://github.com/deeppomf/DeepCreamPy/releases).
+Binary only available for Windows 64-bit.
+
+## Run Code Yourself
+If you want to run the code yourself, you can clone this repo and download the model from https://drive.google.com/open?id=1byrmn6wp0r27lSXcT9MC4j-RQ2R04P1Z. Unzip the file into the /models/ folder.
+
+### Dependencies (for running the code yourself)
+- Python 3
+- TensorFlow 1.10
+- Pillow
+- h5py
+
+No GPU required! Tested on Ubuntu 16.04 and Windows. (Tensorflow on Windows is compatible with Python 3 and not Python 2.)
+
+Tensorflow, Pillow, and h5py can all be installed by running in the command line
+
+```
+$ pip install -r requirements.txt
+```
 
 # Limitations
 The decensorship is intended to work on color hentai images that have minor to moderate censorship of the penis or vagina.
@@ -30,20 +48,6 @@ It does NOT work with:
 - Animated gifs/videos
 
 In particular, if a vagina or penis is completely censored out, decensoring will be ineffective.
-
-# Dependencies (for running the code yourself)
-- Python 3
-- TensorFlow 1.10
-- Pillow
-- h5py
-
-No GPU required! Tested on Ubuntu 16.04 and Windows. (Tensorflow on Windows is compatible with Python 3 and not Python 2.)
-
-Tensorflow, Pillow, and h5py can all be installed by running in the command line
-
-```
-$ pip install -r requirements.txt
-```
 
 # Usage
 ## I. Decensoring bar censors
