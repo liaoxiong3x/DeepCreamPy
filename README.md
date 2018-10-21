@@ -7,12 +7,13 @@ This project applies an implementation of [Image Inpainting for Irregular Holes 
 
 # What's New?
 - Decensoring images of ANY size
+- Decensoring censors of ANY shape (e.g. bunch of black lines, pink hearts, etc.)
 - Higher quality decensors
 - Support for mosaic decensors
 - User interface (still a WIP and not very usable)
 
 # Limitations
-The decensorship is intended to ONLY work on color hentai images that have minor to moderate bar/mosaic censorship of the penis or vagina.
+The decensorship is intended to ONLY work on color hentai images that have minor to moderate censorship of the penis or vagina.
 
 It does NOT work with:
 - Black and white images
