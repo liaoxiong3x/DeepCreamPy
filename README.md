@@ -10,7 +10,7 @@ This project applies an implementation of [Image Inpainting for Irregular Holes 
 # What's New?
 - Decensoring images of ANY size
 - Higher quality decensors
-- Support for mosaic decensors (not yet available for the binary but available when running the code yourself)
+- Support for mosaic decensors
 - User interface (still a WIP and not very usable)
 
 # Limitations
@@ -88,7 +88,7 @@ For example, if the original image is called "mermaid.jpg," then you want to put
 
 ### A. Using the binary
 
-Not yet implemented.
+Decensor the images by double-clicking on the decensor_mosaic file.
 
 ### B. Running from scratch
 
@@ -100,7 +100,7 @@ $ python decensor.py --is_mosaic=True
 
 Decensored images will be saved to the "decensor_output" folder. Decensoring takes a few minutes per image.
 
-## II. Decensoring with the user interface
+## III. Decensoring with the user interface
 
 To be implemented.
 
