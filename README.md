@@ -12,8 +12,13 @@ This project applies an implementation of [Image Inpainting for Irregular Holes 
 - Support for mosaic decensors
 - User interface (still a WIP and not very usable)
 
+# Releases
+You can download the latest release [here](https://github.com/deeppomf/DeepCreamPy/releases/latest) or find all previous releases [here](https://github.com/deeppomf/DeepCreamPy/releases).
+
+If you want to run the code yourself, you can download the model from https://drive.google.com/open?id=1byrmn6wp0r27lSXcT9MC4j-RQ2R04P1Z. Unzip the file into the /models/ folder.
+
 # Limitations
-The decensorship is intended to ONLY work on color hentai images that have minor to moderate censorship of the penis or vagina.
+The decensorship is intended to work on color hentai images that have minor to moderate censorship of the penis or vagina.
 
 It does NOT work with:
 - Black and white images
@@ -26,12 +31,7 @@ It does NOT work with:
 
 In particular, if a vagina or penis is completely censored out, decensoring will be ineffective.
 
-# Releases
-You can download the latest release [here](https://github.com/deeppomf/DeepCreamPy/releases/latest) or find all previous releases [here](https://github.com/deeppomf/DeepCreamPy/releases).
-
-If you want to run the code yourself, you can download the model from https://drive.google.com/open?id=1byrmn6wp0r27lSXcT9MC4j-RQ2R04P1Z. Unzip the file into the /models/ folder.
-
-# Dependencies
+# Dependencies (for running the code yourself)
 - Python 3
 - TensorFlow 1.10
 - Pillow
