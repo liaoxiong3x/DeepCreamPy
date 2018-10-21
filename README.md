@@ -10,7 +10,7 @@ This project applies an implementation of [Image Inpainting for Irregular Holes 
 # What's New?
 - Decensoring images of ANY size
 - Higher quality decensors
-- Support for mosaic decensors (still a WIP and not yet usable)
+- Support for mosaic decensors (not yet available for the binary but available when running the code yourself)
 - User interface (still a WIP and not very usable)
 
 # Limitations
@@ -64,7 +64,7 @@ To expand selections in GIMP, do Select > Grow.
 
 Save these images in the PNG format to the "decensor_input" folder.
 
-### A. Using the Binary
+### A. Using the binary
 
 Decensor the images by double-clicking on the decensor file.
 
@@ -80,7 +80,25 @@ Decensored images will be saved to the "decensor_output" folder. Decensoring tak
 
 ## II. Decensoring mosaic censors
 
-To be implemented.
+As with decensoring bar censors, perform the same steps of coloring the censored regions green and putting the colored image into the "decensor_input" folder.
+
+In addition, move the original images (before you colored them) into the "decensor_input_original" folder. Ensure each original image has the same names as their corresponding colored version in the "decensor_input" folder.
+
+For example, if the original image is called "mermaid.jpg," then you want to put this image in the "decensor_input_original" folder and, after you colored the censored regions, name the colored image "mermaid.png" and move it to the "decensor_input" folder.
+
+### A. Using the binary
+
+Not yet implemented.
+
+### B. Running from scratch
+
+Decensor the images by running
+
+```
+$ python decensor.py --is_mosaic=True
+```
+
+Decensored images will be saved to the "decensor_output" folder. Decensoring takes a few minutes per image.
 
 ## II. Decensoring with the user interface
 

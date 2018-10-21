@@ -12,7 +12,7 @@ class Decensor():
 
     def __init__(self):
         self.args = config.get_args()
-        self.decensor_mosaic = self.args.is_mosaic
+        self.is_mosaic = self.args.is_mosaic
 
         self.mask_color = [self.args.mask_color_red/255.0, self.args.mask_color_green/255.0, self.args.mask_color_blue/255.0]
 
@@ -21,15 +21,15 @@ class Decensor():
 
         self.load_model()
 
-    def get_mask(self,ori, width, height):
-        mask = np.zeros(ori.shape, np.uint8)
+    def get_mask(self, colored, width, height):
+        mask = np.ones(colored.shape, np.uint8)
         #count = 0
         #TODO: change to iterate over all images in batch when implementing batches
         for row in range(height):
             for col in range(width):
-                if np.array_equal(ori[0][row][col], self.mask_color):
-                    mask[0, row, col] = 1
-        return 1-mask
+                if np.array_equal(colored[0][row][col], self.mask_color):
+                    mask[0, row, col] = 0
+        return mask
 
     def load_model(self):
         self.model = PConvUnet(weight_filepath='data/logs/')
@@ -42,22 +42,40 @@ class Decensor():
     def decensor_all_images_in_folder(self):
         #load model once at beginning and reuse same model
         #self.load_model()
-
-        subdir = self.args.decensor_input_path
-        files = os.listdir(subdir)
+        color_dir = self.args.decensor_input_path
+        file_names = os.listdir(color_dir)
 
         #convert all images into np arrays and put them in a list
-        for file in files:
-            #print(file)
-            file_path = os.path.join(subdir, file)
-            if os.path.isfile(file_path) and os.path.splitext(file_path)[1] == ".png":
-                print("Decensoring the image {file_path}".format(file_path = file_path))
-                censored_img = Image.open(file_path)
-                self.decensor_image(censored_img, file)
+        for file_name in file_names:
+            color_file_path = os.path.join(color_dir, file_name)
+            if os.path.isfile(color_file_path) and os.path.splitext(color_file_path)[1] == ".png":
+                print("--------------------------------------------------------------------------")
+                print("Decensoring the image {color_file_path}".format(color_file_path = color_file_path))
+                colored_img = Image.open(color_file_path)
+                #if we are doing a mosaic decensor
+                if self.is_mosaic:
+                    #get the original file that hasn't been colored
+                    ori_dir = self.args.decensor_input_original_path
+                    #since the original image might not be a png, test multiple file formats
+                    valid_formats = {".png", ".jpg", ".jpeg"}
+                    found_valid = False
+                    for valid_format in valid_formats:
+                        test_file_name = os.path.splitext(file_name)[0] + valid_format
+                        ori_file_path = os.path.join(ori_dir, test_file_name)
+                        if os.path.isfile(ori_file_path):
+                            found_valid = True
+                            ori_img = Image.open(ori_file_path)
+                            self.decensor_image(ori_img, colored_img, file_name)
+                            continue
+                    if not found_valid:
+                        print("Corresponding original, uncolored image not found in {ori_file_path}. \nCheck if it exists and is in the PNG or JPG format.".format(ori_file_path = ori_file_path))
+                else:
+                    self.decensor_image(colored_img, colored_img, file_name)
+        print("--------------------------------------------------------------------------")
 
     #decensors one image at a time
-    #TODO: decensor all cropped parts of the same image in a batch (then i need input for ori an array of those images and make additional changes)
-    def decensor_image(self,ori, file_name):
+    #TODO: decensor all cropped parts of the same image in a batch (then i need input for colored an array of those images and make additional changes)
+    def decensor_image(self, ori, colored, file_name):
         width, height = ori.size
         #save the alpha channel if the image has an alpha channel
         has_alpha = False
@@ -72,13 +90,18 @@ class Decensor():
         ori_array = np.array(ori_array / 255.0)
         ori_array = np.expand_dims(ori_array, axis = 0)
 
-        mask = self.get_mask(ori_array, width, height)
+        mask = None
+        if self.is_mosaic:
+            #if mosaic decensor, mask is empty
+            mask = np.ones(ori_array.shape, np.uint8)
+        else:
+            mask = self.get_mask(ori_array, width, height) 
 
-        regions = find_regions(ori)
+        regions = find_regions(colored.convert('RGB'))
         print("Found {region_count} censored regions in this image!".format(region_count = len(regions)))
 
-        if len(regions) == 0 and not self.decensor_mosaic:
-            print("No green colored regions detected!")
+        if len(regions) == 0 and not self.is_mosaic:
+            print("No green ori regions detected!")
             return
 
         output_img_array = ori_array[0].copy()
@@ -86,7 +109,7 @@ class Decensor():
         for region_counter, region in enumerate(regions, 1):
             bounding_box = expand_bounding(ori, region)
             crop_img = ori.crop(bounding_box)
-            #crop_img.show()
+            # crop_img.show()
             #convert mask back to image
             mask_reshaped = mask[0,:,:,:] * 255.0
             mask_img = Image.fromarray(mask_reshaped.astype('uint8'))
@@ -98,7 +121,7 @@ class Decensor():
             #resize the mask images
             mask_img = mask_img.crop(bounding_box)
             mask_img = mask_img.resize((512, 512))
-            #mask_img.show()
+            # mask_img.show()
             #convert mask_img back to array 
             mask_array = np.asarray(mask_img)
             mask_array = np.array(mask_array / 255.0)
@@ -122,7 +145,7 @@ class Decensor():
             # print(pred_img_array.shape)
 
             pred_img = Image.fromarray(pred_img_array.astype('uint8'))
-            #pred_img.show()
+            # pred_img.show()
             pred_img = pred_img.resize((bounding_width, bounding_height), resample = Image.BICUBIC)
             pred_img_array = np.asarray(pred_img)
             pred_img_array = pred_img_array / 255.0
@@ -131,23 +154,20 @@ class Decensor():
             pred_img_array = np.expand_dims(pred_img_array, axis = 0)
 
             for i in range(len(ori_array)):
-                if self.decensor_mosaic:
-                    output_img_array = pred_img[i]
-                else:
-                    for col in range(bounding_width):
-                        for row in range(bounding_height):
-                            bounding_width = col + bounding_box[0]
-                            bounding_height = row + bounding_box[1]
-                            if (bounding_width, bounding_height) in region:
-                                output_img_array[bounding_height][bounding_width] = pred_img_array[i,:,:,:][row][col]
+                for col in range(bounding_width):
+                    for row in range(bounding_height):
+                        bounding_width = col + bounding_box[0]
+                        bounding_height = row + bounding_box[1]
+                        if (bounding_width, bounding_height) in region:
+                            output_img_array[bounding_height][bounding_width] = pred_img_array[i,:,:,:][row][col]
             print("{region_counter} out of {region_count} regions decensored.".format(region_counter=region_counter, region_count=len(regions)))
 
         output_img_array = output_img_array * 255.0
 
         #restore the alpha channel
         if has_alpha:
-            print(output_img_array.shape)
-            print(alpha_channel.shape)
+            #print(output_img_array.shape)
+            #print(alpha_channel.shape)
             output_img_array = np.concatenate((output_img_array, alpha_channel), axis = 2)
 
         output_img = Image.fromarray(output_img_array.astype('uint8'))
