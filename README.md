@@ -14,9 +14,7 @@ This project applies an implementation of [Image Inpainting for Irregular Holes 
 - User interface (still a WIP and not very usable)
 
 # Limitations
-The decensorship is intended to ONLY work on color hentai images that have minor to moderate bar censorship of the penis or vagina.
-
-Mosaic decensor support soon.
+The decensorship is intended to ONLY work on color hentai images that have minor to moderate bar/mosaic censorship of the penis or vagina.
 
 It does NOT work with:
 - Black and white images
@@ -119,7 +117,7 @@ Here are some examples of bad and good colorings:
 |--- | --- | ---|
 |![Incomplete coloring](/readme_images/mermaid_face_censored_bad_incomplete.png)|![Incomplete coloring](/readme_images/mermaid_face_censored_bad_incomplete_zoom.png)|Some censored pixels was left uncolored. Expand your selections to fully cover all censored regions.|
 |![Bad edges](/readme_images/mermaid_face_censored_bad_edge.png)|![Bad edges](/readme_images/mermaid_face_censored_bad_edge_zoom.png)|Some pixels around the edges of the green regions are not pure green. This will cause the green to bleed into the decensors. Make sure anti-aliasing is off and to use a pencil tool and not a brush tool if possible.|
-|![Perfect coloring!](/readme_images/mermaid_face_censored_good.png)|![Perfect coloring!](/readme_images/mermaid_face_censored_good_zoom.png)|Perfect coloring!|
+|![Perfect coloring!](/readme_images/mermaid_face_censored_good.png)|![Perfect coloring! The censored region is uniformly colored correctly.](/readme_images/mermaid_face_censored_good_zoom.png)|Perfect coloring!|
 
 # To do
 - Finish the user interface
