@@ -1,3 +1,3 @@
-This work (the code and the model) is under my (deeppomf's) exclusive copyright. The only right I grant to users is using this work for personal use to decensor hentai. Viewing and forking the repository is allowed as per the Github Terms of Service, but any copying, distribution, and modification not allowed by the Github ToS is prohibited. Commercial use is prohibited. (Modification of the 6 values of the arguments in config.py is allowed.)
+This work (the code and the model) is under my (deeppomf's) exclusive copyright. I grant users the right to use this work for personal use to decensor hentai. Viewing and forking the repository is allowed as per the Github Terms of Service, but any copying or distribution not allowed by the Github ToS is prohibited. Commercial use is prohibited.
 
 I will likely change the license to be more permissive in the future, but I make no guarantees.
