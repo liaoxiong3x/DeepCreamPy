@@ -95,11 +95,12 @@ class Decensor():
         else:
             mask = self.get_mask(ori_array, width, height) 
 
+        #colored image is only used for finding the regions
         regions = find_regions(colored.convert('RGB'))
         print("Found {region_count} censored regions in this image!".format(region_count = len(regions)))
 
         if len(regions) == 0 and not self.is_mosaic:
-            print("No green ori regions detected!")
+            print("No green regions detected!")
             return
 
         output_img_array = ori_array[0].copy()
@@ -154,10 +155,10 @@ class Decensor():
             for i in range(len(ori_array)):
                 for col in range(bounding_width):
                     for row in range(bounding_height):
-                        bounding_width = col + bounding_box[0]
-                        bounding_height = row + bounding_box[1]
-                        if (bounding_width, bounding_height) in region:
-                            output_img_array[bounding_height][bounding_width] = pred_img_array[i,:,:,:][row][col]
+                        bounding_width_index = col + bounding_box[0]
+                        bounding_height_index = row + bounding_box[1]
+                        if (bounding_width_index, bounding_height_index) in region:
+                            output_img_array[bounding_height_index][bounding_width_index] = pred_img_array[i,:,:,:][row][col]
             print("{region_counter} out of {region_count} regions decensored.".format(region_counter=region_counter, region_count=len(regions)))
 
         output_img_array = output_img_array * 255.0
