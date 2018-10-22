@@ -129,7 +129,7 @@ Here are some examples of bad and good colorings:
 Contributions are welcome! Special thanks to StartleStars for contributing code for mosaic decensorship and SoftArmpit for greatly simplifying decensoring!
 
 # License
-See LICENSE.txt[LICENSE.txt] for information about the license.
+See [LICENSE.txt](LICENSE.txt) for information about the license.
 
 # Acknowledgements
 Example mermaid image by Shurajo & AVALANCHE Game Studio under [CC BY 3.0 License](https://creativecommons.org/licenses/by/3.0/). The example image is modified from the original, which can be found [here](https://opengameart.org/content/mermaid).
@@ -138,4 +138,4 @@ Neural network code is modified from MathiasGruber's project [Partial Convolutio
 
 User interface code is modified from Packt's project [Tkinter GUI Application Development Blueprints - Second Edition](https://github.com/PacktPublishing/Tkinter-GUI-Application-Development-Blueprints-Second-Edition). [Tkinter GUI Application Development Blueprints - Second Edition](https://github.com/PacktPublishing/Tkinter-GUI-Application-Development-Blueprints-Second-Edition) is licensed under the MIT license.
 
-See ACKNOWLEDGEMENTS.md[ACKNOWLEDGEMENTS.md] for full license text of these 3 projects.
+See [ACKNOWLEDGEMENTS.md](ACKNOWLEDGEMENTS.md) for full license text of these 3 projects.
