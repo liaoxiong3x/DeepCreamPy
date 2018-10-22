@@ -4,7 +4,7 @@ Neural network code is modified from MathiasGruber's project [Partial Convolutio
 
 User interface code is modified from Packt's project [Tkinter GUI Application Development Blueprints - Second Edition](https://github.com/PacktPublishing/Tkinter-GUI-Application-Development-Blueprints-Second-Edition). [Tkinter GUI Application Development Blueprints - Second Edition](https://github.com/PacktPublishing/Tkinter-GUI-Application-Development-Blueprints-Second-Edition) is licensed under the MIT license.
 
-
+MIT License text for MathiasGruber and Packt:
 ```
 # Copyright (c) 2018 MathiasGruber, Packt
 #
