@@ -30,25 +30,22 @@ If you want to run the code yourself, you can clone this repo and download the m
 
 No GPU required! Tested on Ubuntu 16.04 and Windows. (Tensorflow on Windows is compatible with Python 3 and not Python 2.)
 
-Tensorflow, Pillow, and h5py can all be installed by running in the command line
+Tensorflow, Keras, Pillow, and h5py can all be installed by running in the command line
 
 ```
 $ pip install -r requirements.txt
 ```
 
 # Limitations
-The decensorship is intended to work on color hentai images that have minor to moderate censorship of the penis or vagina.
+The decensorship is intended to work on color hentai images that have minor to moderate censorship of the penis or vagina. If a vagina or penis is completely censored out, decensoring will be ineffective.
 
 It does NOT work with:
-- Black and white images
-- Monochrome images
+- Black and white/Monochrome image
 - Hentai containing screentones (e.g. printed hentai)
 - Real life porn
 - Censorship of nipples
 - Censorship of anus
 - Animated gifs/videos
-
-In particular, if a vagina or penis is completely censored out, decensoring will be ineffective.
 
 # Usage
 ## I. Decensoring bar censors
@@ -107,11 +104,9 @@ Decensored images will be saved to the "decensor_output" folder. Decensoring tak
 To be implemented.
 
 # Troubleshooting
-If your decensor output looks like this:
+If your decensor output looks like this, then the censored regions were not colored correctly.
 
 ![Bad decensor](/readme_images/mermaid_face_censored_bad_decensor.png)
-
-then the censored regions were not colored correctly.
 
 *Make sure you have antialiasing off.*
 
@@ -122,6 +117,10 @@ Here are some examples of bad and good colorings:
 |![Incomplete coloring](/readme_images/mermaid_face_censored_bad_incomplete.png)|![Incomplete coloring](/readme_images/mermaid_face_censored_bad_incomplete_zoom.png)|Some censored pixels was left uncolored. Expand your selections to fully cover all censored regions.|
 |![Bad edges](/readme_images/mermaid_face_censored_bad_edge.png)|![Bad edges](/readme_images/mermaid_face_censored_bad_edge_zoom.png)|Some pixels around the edges of the green regions are not pure green. This will cause the green to bleed into the decensors. Make sure anti-aliasing is off and to use a pencil tool and not a brush tool if possible.|
 |![Perfect coloring!](/readme_images/mermaid_face_censored_good.png)|![Perfect coloring! The censored region is uniformly colored correctly.](/readme_images/mermaid_face_censored_good_zoom.png)|Perfect coloring!|
+
+# FAQ
+- Q: Why aren't black and white images supported? Aren't black and white images easier to decensor than color images?
+- A: Black and white images are harder to decensor than color images because neural networks struggle to replicate screentone patterns.
 
 # To do
 - Finish the user interface
