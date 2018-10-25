@@ -125,6 +125,8 @@ Here are some examples of bad and good colorings:
 
 # To do
 - Finish the user interface
+- Update model with better quality data
+- Add support for black and white images
 
 Contributions are welcome! Special thanks to StartleStars for contributing code for mosaic decensorship and SoftArmpit for greatly simplifying decensoring!
 
