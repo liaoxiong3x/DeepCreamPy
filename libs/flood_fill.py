@@ -68,7 +68,7 @@ def expand_bounding(img, region, expand_factor=1.5, min_size = 256, max_size=512
             y1_square = 0
             x2_square = current_size
             y2_square = current_size
-        elif x2_square > (width - 1) and y2_square > (height - 1):
+        elif x2_square > (width - 1) and y1_square < 0:
             x1_square = width - current_size - 1
             y1_square = 0
             x2_square = width - 1
