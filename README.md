@@ -9,7 +9,7 @@ This project applies an implementation of [Image Inpainting for Irregular Holes 
 - Decensoring images of ANY size
 - Decensoring censors of ANY shape (e.g. bunch of black lines, pink hearts, etc.)
 - Higher quality decensors
-- Support for mosaic decensors
+- Support for mosaic decensors (still a WIP and not very usable)
 - User interface (still a WIP and not very usable)
 
 ## Installation
