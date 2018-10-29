@@ -130,6 +130,12 @@ Here are some examples of bad and good colorings:
 Contributions are welcome! Special thanks to StartleStars for contributing code for mosaic decensorship and SoftArmpit for greatly simplifying decensoring!
 
 ## License
+# Copyright (c) 2018, deeppomf. All rights reserved.
+#
+# This work is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike
+# 4.0 International License. To view a copy of this license, visit
+# https://creativecommons.org/licenses/by-nc-sa/4.0/ or send a letter to
+# Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
 See [LICENSE.txt](LICENSE.txt) for information about the license.
 
 ## Acknowledgements
