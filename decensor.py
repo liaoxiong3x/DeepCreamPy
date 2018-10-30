@@ -63,7 +63,6 @@ class Decensor():
                         test_bn, test_ext = os.path.splitext(test_file_name)
                         if (test_bn == color_bn) and (test_ext.casefold() in valid_formats):
                             ori_file_path = os.path.join(ori_dir, test_file_name)
-                            found_valid = True
                             ori_img = Image.open(ori_file_path)
                             self.decensor_image(ori_img, colored_img, file_name)
                             break
