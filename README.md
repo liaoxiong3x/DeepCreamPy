@@ -105,13 +105,13 @@ To be implemented.
 
 ## Troubleshooting
 
-###Installation
+### Installation
 ```
 ModuleNotFoundError: No module named '_pywrap_tensorflow_internal'
 ```
 See https://github.com/deeppomf/DeepCreamPy/issues/26#issuecomment-434043166
 
-###Decensoring
+### Decensoring
 If your decensor output looks like this, then the censored regions were not colored correctly.
 
 ![Bad decensor](/readme_images/mermaid_face_censored_bad_decensor.png)
