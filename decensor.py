@@ -8,7 +8,7 @@ import config
 from libs.pconv_hybrid_model import PConvUnet
 from libs.flood_fill import find_regions, expand_bounding
 
-class Decensor():
+class Decensor:
 
     def __init__(self):
         self.args = config.get_args()
