@@ -1,7 +1,11 @@
 # DeepCreamPy
 *Decensoring Hentai with Deep Neural Networks. Formerly named DeepMindBreak.*
 
-This project applies an implementation of [Image Inpainting for Irregular Holes Using Partial Convolutions](https://arxiv.org/abs/1804.07723) to the problem of hentai decensorship. Using a deep fully convolutional neural network, DeepCreamPy can replace censored artwork in hentai with plausible reconstructions. The user needs to specify the censored regions in each image by coloring those regions green in a separate image editing program like GIMP or Photoshop.
+A deep learing-based tool to automatically replace censored artwork in hentai with plausible reconstructions.
+
+The user needs to specify the censored regions in each image by coloring those regions green in a separate image editing program like GIMP or Photoshop and saving the images to a specific folder. A neural network handles the hard part of filling in the censored regions.
+
+DeepCreamPy has a pre-built binary for Windows 64-bit. DeepCreamPy works on Windows, Mac, and Linux.
 
 ![Censored, decensored](/readme_images/mermaid_collage.png)
 
@@ -10,7 +14,7 @@ This project applies an implementation of [Image Inpainting for Irregular Holes 
 - Decensoring censors of ANY shape (e.g. bunch of black lines, pink hearts, etc.)
 - Higher quality decensors
 - Support for mosaic decensors (still a WIP and not very usable)
-- User interface (still a WIP and not very usable)
+- User interface (not usable)
 
 ## Installation
 
@@ -56,7 +60,7 @@ For each image you want to decensor, using image editing software like Photoshop
 
 *If you aren't using the pencil tool, BE SURE TO TURN OFF ANTI-ALIASING on the tool you are using.*
 
-I personally use the wand selection tool with anti-aliasing turned off to select the censored regions. I then expand the selections slightly, pick the color (0,255,0), and use the paint bucket tool on the selection regions.
+I personally use the wand selection tool with anti-aliasing turned off to select the censored regions. I then expand the selections slightly, pick the color (0,255,0), and use the paint bucket tool on the selected regions.
 
 To expand selections in Photoshop, do Selection > Modify > Expand or Contract.
 To expand selections in GIMP, do Select > Grow.
@@ -131,9 +135,10 @@ Here are some examples of bad and good colorings:
 - A: Black and white images are harder to decensor than color images because neural networks struggle to replicate screentone patterns.
 
 ## To do
-- Finish the user interface
-- Update model with better quality data
+- Finish the user interface (sometime in November)
+- Update model with better quality data (sometime in November)
 - Add support for black and white images
+- Add error log
 
 Contributions are welcome! Special thanks to StartleStars for contributing code for mosaic decensorship and SoftArmpit for greatly simplifying decensoring!
 
