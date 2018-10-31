@@ -48,9 +48,10 @@ class Decensor():
         #convert all images into np arrays and put them in a list
         for file_name in file_names:
             color_file_path = os.path.join(color_dir, file_name)
-            if os.path.isfile(color_file_path) and os.path.splitext(color_file_path)[1] == ".png":
+            color_bn, color_ext = os.path.splitext(file_name)
+            if os.path.isfile(color_file_path) and color_ext.casefold() == ".png":
                 print("--------------------------------------------------------------------------")
-                print("Decensoring the image {color_file_path}".format(color_file_path = color_file_path))
+                print("Decensoring the image {}".format(color_file_path))
                 colored_img = Image.open(color_file_path)
                 #if we are doing a mosaic decensor
                 if self.is_mosaic:
@@ -58,17 +59,16 @@ class Decensor():
                     ori_dir = self.args.decensor_input_original_path
                     #since the original image might not be a png, test multiple file formats
                     valid_formats = {".png", ".jpg", ".jpeg"}
-                    found_valid = False
-                    for valid_format in valid_formats:
-                        test_file_name = os.path.splitext(file_name)[0] + valid_format
-                        ori_file_path = os.path.join(ori_dir, test_file_name)
-                        if os.path.isfile(ori_file_path):
-                            found_valid = True
+                    for test_file_name in os.listdir(ori_dir):
+                        test_bn, test_ext = os.path.splitext(test_file_name)
+                        if (test_bn == color_bn) and (test_ext.casefold() in valid_formats):
+                            ori_file_path = os.path.join(ori_dir, test_file_name)
                             ori_img = Image.open(ori_file_path)
                             self.decensor_image(ori_img, colored_img, file_name)
-                            continue
-                    if not found_valid:
-                        print("Corresponding original, uncolored image not found in {ori_file_path}. \nCheck if it exists and is in the PNG or JPG format.".format(ori_file_path = ori_file_path))
+                            break
+                    else: #for...else, i.e if the loop finished without encountering break
+                        print("Corresponding original, uncolored image not found in {}.".format(ori_file_path))
+                        print("Check if it exists and is in the PNG or JPG format.")
                 else:
                     self.decensor_image(colored_img, colored_img, file_name)
         print("--------------------------------------------------------------------------")
