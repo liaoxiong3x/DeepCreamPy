@@ -262,6 +262,14 @@ class PaintApplication(framework.Framework):
         # self.motion(event)
         self.draw_irregular_line()
         self.motion(event)
+
+    def draw_line_update_x_y(self, event=None):
+        self.start_x, self.start_y = self.end_x, self.end_y
+        # self.end_x, self.end_y = self.adjust_canvas_coords(event.x, event.y)
+        # self.motion(event)
+        self.draw_line()
+        self.motion(event)
+
     def draw_irregular_line_options(self):
         self.create_fill_options_combobox()
         self.create_width_options_combobox()
@@ -413,12 +421,14 @@ class PaintApplication(framework.Framework):
             self, self.selected_tool_bar_function, self.function_not_defined)
         func()
 
+    #TODO: fix this function. Lines made by this disappear upon using irregular line tool
     def draw_line(self):
         self.current_item = self.canvas.create_line(
             self.start_x, self.start_y, self.end_x, self.end_y, fill=self.fill, width=self.brush_width)
 
-        # self.drawn_img_draw.line((self.start_x, self.start_y, self.end_x, self.end_y), fill=self.fill_pil, width=self.brush_width)
-
+        # self.drawn_img_draw.line((self.start_x, self.start_y, self.end_x, self.end_y), fill=self.fill_pil, width=int(self.brush_width))
+        # self.display_canvas()
+        # self.canvas.bind("<B1-Motion>", self.draw_line_update_x_y)
     def create_tool_bar_buttons(self):
         for index, name in enumerate(self.tool_bar_functions):
             icon = tk.PhotoImage(file='icons/' + name + '.gif')
