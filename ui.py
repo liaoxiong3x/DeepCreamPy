@@ -66,7 +66,6 @@ class PaintApplication(framework.Framework):
         self.bind_mouse()
 
         # Create blank image to avoid errors with irregular line drawing on blank canvas
-        # TODO: Optimize this, seems too inefficient
         self.canvas.img = Image.new('RGB', (800,1280), (255, 255, 255))
         self.canvas.img_width, self.canvas.img_height = self.canvas.img.size
         # make reference to image to prevent garbage collection
@@ -178,13 +177,11 @@ class PaintApplication(framework.Framework):
     def on_decensor_menu_clicked(self, event=None):
         combined_img = Image.alpha_composite(self.canvas.img.convert('RGBA'), self.drawn_img)
         decensorer = decensor.Decensor()
-        print(self.file_name)
         orig_name = self.file_name
         path, file = os.path.split(self.file_name)
         name, ext = os.path.splitext(file)
         name = name + "_decensored"
         self.file_name = os.path.join(path, name + ext)
-        print(self.file_name)
         decensorer.decensor_image(combined_img.convert('RGB'),combined_img.convert('RGB'), self.file_name)
         messagebox.showinfo(
            "Decensoring", "Decensoring complete! image saved to {save_path}".format(save_path=self.file_name))
