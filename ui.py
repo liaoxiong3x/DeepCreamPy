@@ -38,12 +38,11 @@ from tkinter import filedialog
 import framework
 import decensor
 
-
 class PaintApplication(framework.Framework):
 
     def __init__(self, root):
         super().__init__(root)
-        
+        self.circle = 0
         self.drawn_img = None
         self.screen_width = root.winfo_screenwidth()
         self.screen_height = root.winfo_screenheight()
@@ -65,6 +64,19 @@ class PaintApplication(framework.Framework):
         self.create_gui()
         self.bind_mouse()
 
+        # Create blank image to avoid errors with irregular line drawing on blank canvas
+        # TODO: Optimize this, seems too inefficient
+        self.canvas.img = Image.new('RGB', (800,1280), (255, 255, 255))
+        self.canvas.img_width, self.canvas.img_height = self.canvas.img.size
+        # make reference to image to prevent garbage collection
+        # https://stackoverflow.com/questions/20061396/image-display-on-tkinter-canvas-not-working
+        self.canvas.tk_img = ImageTk.PhotoImage(self.canvas.img)
+        self.canvas.config(width=self.canvas.img_width, height=self.canvas.img_height)
+        self.canvas.create_image(self.canvas.img_width / 2.0, self.canvas.img_height / 2.0, image=self.canvas.tk_img)
+
+        self.drawn_img = Image.new("RGBA", self.canvas.img.size)
+        self.drawn_img_draw = ImageDraw.Draw(self.drawn_img)
+
     def on_new_file_menu_clicked(self, event=None):
         self.start_new_project()
 
@@ -77,7 +89,7 @@ class PaintApplication(framework.Framework):
         self.open_image()
 
     def open_image(self):
-        self.file_name = filedialog.askopenfilename(master=self.root, filetypes = [("All Files","*.*")], title="Open...")
+        self.file_name = filedialog.askopenfilename(master=self.root, title="Open...")
         print(self.file_name)
         self.canvas.img = Image.open(self.file_name)
         self.canvas.img_width, self.canvas.img_height = self.canvas.img.size
@@ -118,7 +130,7 @@ class PaintApplication(framework.Framework):
 
     def on_save_as_menu_clicked(self):
         file_name = filedialog.asksaveasfilename(
-            master=self.root, filetypes=[('All Files', ('*.ps', '*.ps'))], title="Save...")
+            master=self.root, filetypes=[('All Files', ('*.png'))], title="Save...")
         if not file_name:
             return
         self.file_name = file_name
@@ -165,10 +177,11 @@ class PaintApplication(framework.Framework):
     def on_decensor_menu_clicked(self, event=None):
         combined_img = Image.alpha_composite(self.canvas.img.convert('RGBA'), self.drawn_img)
         decensorer = decensor.Decensor()
-        decensorer.decensor_image(combined_img.convert('RGB'), self.file_name + ".png")
+        print(self.file_name)
+        decensorer.decensor_image(combined_img.convert('RGB'),combined_img.convert('RGB'), self.file_name + ".png")
+        save_path = self.file_name + ".png"
         messagebox.showinfo(
-           "Decensoring", "Decensoring complete!")
-
+           "Decensoring", "Decensoring complete! image saved to {save_path}".format(save_path=save_path))
     def on_about_menu_clicked(self, event=None):
         # messagebox.showinfo(
         #    "Decensoring", "Decensoring in progress.")
@@ -218,11 +231,30 @@ class PaintApplication(framework.Framework):
 
         self.canvas.bind("<B1-Motion>", self.draw_irregular_line_update_x_y)
 
+    # Creates circular indicator for brush size, modified from https://stackoverflow.com/questions/42631060/draw-a-defined-size-circle-around-cursor-in-tkinter-python
+    def motion(self, event=None):
+        x, y = event.x, event.y
+        # the addition is just to center the oval around the center of the mouse
+        # remove the the +3 and +7 if you want to center it around the point of the mouse
+
+
+        self.canvas.delete(self.circle)  # to refresh the circle each motion
+
+        radius = self.brush_width/2.0  # change this for the size of your circle
+
+        x_max = x + radius
+        x_min = x - radius
+        y_max = y + radius
+        y_min = y - radius
+
+        self.circle = self.canvas.create_oval(x_max, y_max, x_min, y_min, outline="black")
+
     def draw_irregular_line_update_x_y(self, event=None):
         self.start_x, self.start_y = self.end_x, self.end_y
         self.end_x, self.end_y = self.adjust_canvas_coords(event.x, event.y)
+        # self.motion(event)
         self.draw_irregular_line()
-
+        self.motion(event)
     def draw_irregular_line_options(self):
         self.create_fill_options_combobox()
         self.create_width_options_combobox()
@@ -414,19 +446,23 @@ class PaintApplication(framework.Framework):
         self.start_x = self.end_x = self.canvas.canvasx(event.x)
         self.start_y = self.end_y = self.canvas.canvasy(event.y)
         self.execute_selected_method()
+        self.motion(event)
 
     def on_mouse_button_pressed_motion(self, event):
         self.end_x = self.canvas.canvasx(event.x)
         self.end_y = self.canvas.canvasy(event.y)
         self.canvas.delete(self.current_item)
+        self.motion(event)
         self.execute_selected_method()
 
     def on_mouse_button_released(self, event):
         self.end_x = self.canvas.canvasx(event.x)
         self.end_y = self.canvas.canvasy(event.y)
+        self.motion(event)
 
     def on_mouse_unpressed_motion(self, event):
         self.show_current_coordinates(event)
+        self.motion(event)
 
     def create_gui(self):
         self.create_menu()
