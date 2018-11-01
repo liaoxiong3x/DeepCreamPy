@@ -37,6 +37,7 @@ from tkinter import messagebox
 from tkinter import filedialog
 import framework
 import decensor
+import os
 
 class PaintApplication(framework.Framework):
 
@@ -178,10 +179,16 @@ class PaintApplication(framework.Framework):
         combined_img = Image.alpha_composite(self.canvas.img.convert('RGBA'), self.drawn_img)
         decensorer = decensor.Decensor()
         print(self.file_name)
-        decensorer.decensor_image(combined_img.convert('RGB'),combined_img.convert('RGB'), self.file_name + ".png")
-        save_path = self.file_name + ".png"
+        orig_name = self.file_name
+        path, file = os.path.split(self.file_name)
+        name, ext = os.path.splitext(file)
+        name = name + "_decensored"
+        self.file_name = os.path.join(path, name + ext)
+        print(self.file_name)
+        decensorer.decensor_image(combined_img.convert('RGB'),combined_img.convert('RGB'), self.file_name)
         messagebox.showinfo(
-           "Decensoring", "Decensoring complete! image saved to {save_path}".format(save_path=save_path))
+           "Decensoring", "Decensoring complete! image saved to {save_path}".format(save_path=self.file_name))
+        self.file_name = orig_name
     def on_about_menu_clicked(self, event=None):
         # messagebox.showinfo(
         #    "Decensoring", "Decensoring in progress.")
