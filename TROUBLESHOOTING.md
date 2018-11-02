@@ -1,5 +1,9 @@
-# Troubleshooting
+## Troubleshooting
 
+### Poor Mosaic Decensorings/Mosaic Decensoring Does Nothing
+The mosaic decensoring is a WIP feature. Poor results should be expected.
+
+### Strange Color Decensors
 If your decensor output looks like this, then the censored regions were not colored correctly.
 
 ![Bad decensor](/readme_images/mermaid_face_censored_bad_decensor.png)
