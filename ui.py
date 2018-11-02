@@ -35,7 +35,7 @@ from tkinter import colorchooser
 from tkinter import ttk
 from tkinter import messagebox
 from tkinter import filedialog
-import framework
+import libs.framework as framework
 import decensor
 import os
 
