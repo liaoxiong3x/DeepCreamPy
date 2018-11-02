@@ -5,16 +5,16 @@ A deep learning-based tool to automatically replace censored artwork in hentai w
 
 The user specifies the censored regions in each image by coloring those regions green in a separate image editing program like GIMP or Photoshop. A neural network handles the hard part of filling in the censored regions.
 
-DeepCreamPy has a pre-built binary for Windows 64-bit. DeepCreamPy works on Windows, Mac, and Linux.
+DeepCreamPy has a pre-built binary for Windows 64-bit available [here](https://github.com/deeppomf/DeepCreamPy/releases/latest). DeepCreamPy works on Windows, Mac, and Linux.
 
 ![Censored, decensored](/readme_images/mermaid_collage.png)
 
-## What's New?
+## Features
 - Decensoring images of ANY size
 - Decensoring censors of ANY shape (e.g. bunch of black lines, pink hearts, etc.)
 - Higher quality decensors
 - Support for mosaic decensors (still a WIP and not very usable)
-- User interface (not usable)
+- User interface (still a WIP and not usable)
 
 ## Limitations
 The decensorship is intended to work on color hentai images that have minor to moderate censorship of the penis or vagina. If a vagina or penis is completely censored out, decensoring will be ineffective.
