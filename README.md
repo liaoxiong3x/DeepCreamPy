@@ -29,7 +29,8 @@ It does NOT work with:
 
 ## Table of Contents
 Setup:
-* [Installation](INSTALLATION.md)
+* [Latest Window 64-bit release](https://github.com/deeppomf/DeepCreamPy/releases/latest)
+* [Running code yourself](INSTALLATION.md)
 
 Usage:
 * [Decensoring tutorial](USAGE.md)
