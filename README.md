@@ -32,8 +32,8 @@ Setup:
 * [Installation](INSTALLATION.md)
 
 Usage:
-* [Decensoring Tutorial](USAGE.md)
-* [Troubleshooting for poor quality decensors](TROUBLESHOOTING.md).
+* [Decensoring tutorial](USAGE.md)
+* [Troubleshooting for poor quality decensors](TROUBLESHOOTING.md)
 
 Miscellaneous:
 * [FAQ](FAQ.md)
@@ -44,7 +44,7 @@ Miscellaneous:
 - Add support for black and white images
 - Add error log
 
-Contributions are welcome! Special thanks to StartleStars for contributing code for mosaic decensorship and SoftArmpit for greatly simplifying decensoring!
+Contributions are welcome! Special thanks to Smethan, harjitmoe, itsVale, StartleStars, and SoftArmpit!
 
 ## License
 This project is licensed under GNU Affero General Public License v3.0.
