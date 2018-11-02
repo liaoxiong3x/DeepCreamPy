@@ -32,7 +32,7 @@ Setup:
 * [Installation](INSTALLATION.md)
 
 Usage:
-* [Usage](USAGE.md)
+* [Decensoring Tutorial](USAGE.md)
 * [Troubleshooting for poor quality decensors](TROUBLESHOOTING.md).
 
 Miscellaneous:

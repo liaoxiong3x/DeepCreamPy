@@ -1,13 +1,13 @@
-## Installation
+# Installation
 
-### Download Prebuilt Binaries
+## Download Prebuilt Binaries
 You can download the latest release [here](https://github.com/deeppomf/DeepCreamPy/releases/latest) or find all previous releases [here](https://github.com/deeppomf/DeepCreamPy/releases).
 Binary only available for Windows 64-bit.
 
-### Run Code Yourself
+## Run Code Yourself
 If you want to run the code yourself, you can clone this repo and download the model from https://drive.google.com/open?id=1byrmn6wp0r27lSXcT9MC4j-RQ2R04P1Z. Unzip the file into the /models/ folder.
 
-#### Dependencies (for running the code yourself)
+### Dependencies (for running the code yourself)
 - Python 3.6.7
 - TensorFlow 1.10
 - Keras 2.2.4
