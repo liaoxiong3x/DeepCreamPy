@@ -131,8 +131,7 @@ Here are some examples of bad and good colorings:
 |![Perfect coloring!](/readme_images/mermaid_face_censored_good.png)|![Perfect coloring! The censored region is uniformly colored correctly.](/readme_images/mermaid_face_censored_good_zoom.png)|Perfect coloring!|
 
 ## FAQ
-- Q: Why aren't black and white images supported? Aren't black and white images easier to decensor than color images?
-- A: Black and white images are harder to decensor than color images because neural networks struggle to replicate screentone patterns.
+See [FAQ.md](FAQ.md)
 
 ## To do
 - Finish the user interface (sometime in November)
