@@ -1,4 +1,4 @@
-#Running the Binary
+# Running the Binary
 
 Install Visual C++ Redistributable for Visual Studio 2015 from (here)[Microsoft Visual C++ 2015 Redistributable Update 3].
 
