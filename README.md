@@ -29,7 +29,7 @@ It does NOT work with:
 
 ## Table of Contents
 Setup:
-* [Installing latest Window 64-bit release](https://github.com/deeppomf/DeepCreamPy/releases/latest)
+* [Running latest Window 64-bit release](INSTALLATION_BINARY.md)
 * [Running code yourself](INSTALLATION.md)
 
 Usage:
