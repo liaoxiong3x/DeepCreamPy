@@ -30,4 +30,25 @@ CPUs that don't support AVX instructions will experience this error when using t
 ModuleNotFoundError: No module named '_pywrap_tensorflow_internal'
 ```
 
-See https://github.com/deeppomf/DeepCreamPy/issues/26#issuecomment-434043166 for alternative install instructions.
+Follow these instructions:
+
+1. Start from a clean Python 3.6.7 install.
+2. Download a version of tensorflow that do support AVX instructions from (https://github.com/fo40225/tensorflow-windows-wheel/tree/master/1.10.0/py36/CPU/sse2). I assume you picked tensorflow-1.10.0-cp36-cp36m-win_amd64.whl for 64-bit and the other for 32-bit computers.
+3. Open the command line in the same directory as the file downloaded in step 2. Run
+
+```
+pip install tensorflow-1.10.0-cp36-cp36m-win_amd64.whl
+```
+
+or
+
+```
+pip install tensorflow-1.10.0-cp36-cp36m-win32.whl
+```
+depending on what you installed in step 2.
+4. Open the command line in the directory of "DeepCreamPy-master" and run
+```
+pip install -r requirements.txt
+```
+
+Instructions are from https://github.com/deeppomf/DeepCreamPy/issues/26#issuecomment-434043166.
