@@ -24,13 +24,13 @@ $ pip install -r requirements.txt
 
 ### Dependencies for CPUs that don't support AVX instructions
 
-CPUs that don't support AVX instructions will experience this error when using the above install instructions:
+CPUs that don't support AVX instructions may experience this error when using the above install instructions:
 
 ```
 ModuleNotFoundError: No module named '_pywrap_tensorflow_internal'
 ```
 
-Follow these instructions:
+Follow these alternate install instructions:
 
 1. Start from a clean Python 3.6.7 install.
 2. Download a version of tensorflow that do support AVX instructions from (https://github.com/fo40225/tensorflow-windows-wheel/tree/master/1.10.0/py36/CPU/sse2). I assume you picked tensorflow-1.10.0-cp36-cp36m-win_amd64.whl for 64-bit and the other for 32-bit computers.
