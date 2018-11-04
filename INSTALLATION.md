@@ -22,7 +22,7 @@ Tensorflow, Keras, Pillow, and h5py can all be installed by running in the comma
 $ pip install -r requirements.txt
 ```
 
-### Dependencies for CPUs that don't support AVX instructions
+## Run Code Yourself on CPUs that don't support AVX instructions
 
 CPUs that don't support AVX instructions may experience this error when using the above install instructions:
 
