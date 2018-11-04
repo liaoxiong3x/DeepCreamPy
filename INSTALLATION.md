@@ -22,9 +22,12 @@ Tensorflow, Keras, Pillow, and h5py can all be installed by running in the comma
 $ pip install -r requirements.txt
 ```
 
-If you experience this error:
+### Dependencies for CPUs that don't support AVX instructions
+
+CPUs that don't support AVX instructions will experience this error when using the above install instructions:
 
 ```
 ModuleNotFoundError: No module named '_pywrap_tensorflow_internal'
 ```
+
 See https://github.com/deeppomf/DeepCreamPy/issues/26#issuecomment-434043166 for alternative install instructions.
