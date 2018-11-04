@@ -1,7 +1,7 @@
 # Troubleshooting
 
 ## Poor Mosaic Decensorings/Mosaic Decensoring Does Nothing
-The mosaic decensoring is a WIP feature. Poor results should be expected.
+Mosaic decensoring is a WIP feature. Poor results are possible. It is possible the mosaic decensoring does nothing.
 
 ## Strange Color Decensors
 If your decensor output looks like this, then the censored regions were not colored correctly.
