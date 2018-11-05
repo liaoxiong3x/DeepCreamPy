@@ -1,4 +1,4 @@
 # FAQ
 
-## Why aren't black and white images supported? Aren't black and white images easier to decensor than color images?
-Black and white images are harder to decensor than color images because neural networks struggle to replicate screentone patterns.
+## Why aren't black and white images supported? Black and white images seem easier to decensor than color images.
+Black and white images contain screentone patterns which are difficult for neural networks to replicate.
