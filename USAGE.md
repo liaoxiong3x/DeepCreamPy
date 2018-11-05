@@ -12,7 +12,7 @@ I personally use the wand selection tool with anti-aliasing turned off to select
 To expand selections in Photoshop, do Selection > Modify > Expand or Contract.
 To expand selections in GIMP, do Select > Grow.
 
-Save these images in the PNG format to the "decensor_input" folder.
+Save these images in the PNG format to the "decensor_input" folder. **They MUST be in PNG format.**
 
 ### A. Using the binary
 
