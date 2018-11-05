@@ -45,6 +45,8 @@ Miscellaneous:
 - Add support for black and white images
 - Add error log
 
+Follow me on Twitter [@deeppomf](https://twitter.com/deeppomf) for project updates.
+
 Contributions are welcome! Special thanks to IAmTheRedSpy, 0xb8, deniszh, Smethan, mrmajik45, harjitmoe, itsVale, StartleStars, and SoftArmpit!
 
 ## License
