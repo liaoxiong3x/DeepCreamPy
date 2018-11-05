@@ -3,7 +3,7 @@
 
 A deep learning-based tool to automatically replace censored artwork in hentai with plausible reconstructions.
 
-The user specifies the censored regions in each image by coloring those regions green in a separate image editing program like GIMP or Photoshop. A neural network handles the hard part of filling in the censored regions.
+The user colors cencored regions green in an image editing program like GIMP or Photoshop. A neural network fills in the censored regions.
 
 DeepCreamPy has a pre-built binary for Windows 64-bit available [here](https://github.com/deeppomf/DeepCreamPy/releases/latest). DeepCreamPy works on Windows, Mac, and Linux.
 
@@ -11,17 +11,17 @@ DeepCreamPy has a pre-built binary for Windows 64-bit available [here](https://g
 
 ## Features
 - Decensoring images of ANY size
-- Decensoring censors of ANY shape (e.g. bunch of black lines, pink hearts, etc.)
+- Decensoring of ANY shaped censor (e.g. black lines, pink hearts, etc.)
 - Higher quality decensors
-- Support for mosaic decensors (still a WIP and not very usable)
-- User interface (still a WIP and not usable)
+- Support for mosaic decensors (WIP)
+- User interface (WIP)
 
 ## Limitations
-The decensorship is intended to work on color hentai images that have minor to moderate censorship of the penis or vagina. If a vagina or penis is completely censored out, decensoring will be ineffective.
+The decensorship is for color hentai images that have minor to moderate censorship of the penis or vagina. If a vagina or penis is completely censored out, decensoring will be ineffective.
 
 It does NOT work with:
 - Black and white/Monochrome image
-- Hentai containing screentones (e.g. printed hentai)
+- Hentai with screentones (e.g. printed hentai)
 - Real life porn
 - Censorship of nipples
 - Censorship of anus
@@ -40,8 +40,8 @@ Miscellaneous:
 * [FAQ](FAQ.md)
 
 ## To do
-- Finish the user interface (sometime in November)
-- Update model with better quality data (sometime in November)
+- Finish the user interface (estimated November)
+- Update model with better quality data (estimated November)
 - Add support for black and white images
 - Add error log
 
