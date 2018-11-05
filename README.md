@@ -45,7 +45,7 @@ Miscellaneous:
 - Add support for black and white images
 - Add error log
 
-Contributions are welcome! Special thanks to Smethan, harjitmoe, itsVale, StartleStars, and SoftArmpit!
+Contributions are welcome! Special thanks to IAmTheRedSpy, 0xb8, deniszh, Smethan, mrmajik45, harjitmoe, itsVale, StartleStars, and SoftArmpit!
 
 ## License
 This project is licensed under GNU Affero General Public License v3.0.
