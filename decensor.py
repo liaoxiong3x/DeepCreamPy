@@ -21,14 +21,10 @@ class Decensor:
 
         self.load_model()
 
-    def get_mask(self, colored, width, height):
+    def get_mask(self, colored):
         mask = np.ones(colored.shape, np.uint8)
-        #count = 0
-        #TODO: change to iterate over all images in batch when implementing batches
-        for row in range(height):
-            for col in range(width):
-                if np.array_equal(colored[0][row][col], self.mask_color):
-                    mask[0, row, col] = 0
+        i, j = np.where(np.all(colored[0] == self.mask_color, axis=-1))
+        mask[0, i, j] = 0
         return mask
 
     def load_model(self):
@@ -93,7 +89,7 @@ class Decensor:
             #if mosaic decensor, mask is empty
             mask = np.ones(ori_array.shape, np.uint8)
         else:
-            mask = self.get_mask(ori_array, width, height) 
+            mask = self.get_mask(ori_array)
 
         #colored image is only used for finding the regions
         regions = find_regions(colored.convert('RGB'))
