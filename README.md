@@ -1,11 +1,10 @@
 # DeepCreamPy
-*Decensoring Hentai with Deep Neural Networks. Formerly named DeepMindBreak.*
+*Decensoring Images with Deep Neural Networks. Formerly named DeepMindBreak.*
 
-A deep learning-based tool to automatically replace censored artwork in hentai with plausible reconstructions.
 
-The user colors cencored regions green in an image editing program like GIMP or Photoshop. A neural network fills in the censored regions.
+I looked for the DeepCreamPy binary for windows and didn't find it. So I did a fork and decided to compile. Here is the result:
 
-DeepCreamPy has a pre-built binary for Windows 64-bit available [here](https://github.com/deeppomf/DeepCreamPy/releases/latest). DeepCreamPy works on Windows, Mac, and Linux.
+https://drive.google.com/file/d/1cdisrH_QTsfyd9g_PwRzvONChjVwlMrC/view?usp=sharing
 
 ![Censored, decensored](/readme_images/mermaid_collage.png)
 
